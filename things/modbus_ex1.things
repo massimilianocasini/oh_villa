@@ -1,0 +1,28 @@
+Bridge modbus:tcp:localhostTCP [ host="192.168.178.40", port=502, id=1 ] {
+
+    // read-write for coils. Reading 4 coils, with index 4, and 5.
+    // These correspond to input register numbers 000005, and 000005
+    Bridge poller coils [ start=0, length=2, refresh=1000, type="coil" ] {
+        // Note the zero based indexing: first coil is index 0.
+       Thing data do1 [ readStart="0", readValueType="bit", writeStart="0", writeValueType="bit", writeType="coil" ]
+       Thing data do2 [ readStart="1", readValueType="bit", writeStart="1", writeValueType="bit", writeType="coil" ]
+    }
+    Bridge poller holding [ start=16, length=10, refresh=1000, type="holding" ] {
+        Thing data Tht1t [ readStart="16", readValueType="int16" ]
+        Thing data Tht1u [ readStart="17", readValueType="int16" ]
+        Thing data Tht2t [ readStart="20", readValueType="int16" ]
+        Thing data Tht2u [ readStart="21", readValueType="int16" ]
+        Thing data Tht3t [ readStart="24", readValueType="int16" ]
+        Thing data Tht3u [ readStart="25", readValueType="int16" ]
+    }
+    Bridge poller holding2 [ start=101, length=8, refresh=1000, type="holding" ] {
+        Thing data Tht1s [ readStart="101", readValueType="int16", writeStart="101", writeValueType="int16", writeType="holding"]
+        Thing data Tht2s [ readStart="102", readValueType="int16", writeStart="102", writeValueType="int16", writeType="holding"]
+        Thing data Tht3s [ readStart="103", readValueType="int16", writeStart="103", writeValueType="int16", writeType="holding"]
+        Thing data Tht4s [ readStart="104", readValueType="int16", writeStart="104", writeValueType="int16", writeType="holding"]
+        Thing data Tht5s [ readStart="105", readValueType="int16", writeStart="105", writeValueType="int16", writeType="holding"]
+        Thing data Tht6s [ readStart="106", readValueType="int16", writeStart="106", writeValueType="int16", writeType="holding"]
+        Thing data Tht7s [ readStart="107", readValueType="int16", writeStart="107", writeValueType="int16", writeType="holding"]
+        Thing data Tht8s [ readStart="108", readValueType="int16", writeStart="108", writeValueType="int16", writeType="holding"]
+    }
+}
