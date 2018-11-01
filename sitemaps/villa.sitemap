@@ -7,27 +7,35 @@ sitemap villa label="Benvenuto a CASA"
      //       Text item=DO2
             Default item=Termoumidostato1T
             Default item=Termoumidostato1U
-            Setpoint item=Termoumidostato1S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato1S minValue=10 maxValue=30 step=0.5
         }
         Text label="Antibagno Piano Interrato" icon="toilet"{
             Default item=Termoumidostato2T
             Default item=Termoumidostato2U
-            Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=0.5
         }
         Text label="Appartamento arancione" icon="bedroom"{
             Default item=Termoumidostato3T
             Default item=Termoumidostato3U
-            Setpoint item=Termoumidostato3S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato3S minValue=10 maxValue=30 step=0.5
         }
         Text label="AngoloTV" icon="screen"{
             Default item=Termoumidostato4T
             Default item=Termoumidostato4U
-            Setpoint item=Termoumidostato4S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato4S minValue=10 maxValue=30 step=0.5
         }
         Text label="Antibagno Piano Terra" icon="toilet"{
             Default item=Termoumidostato5T
             Default item=Termoumidostato5U
-            Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=0.5
         }
     }
+    Frame label="Gruppi"
+	{
+		
+		Group item=gPI label="Piano Interrato" icon=temperature
+		
+	
+	}	
+
 }
