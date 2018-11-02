@@ -1,9 +1,12 @@
 Group gAll
 Group gPI
+Group gPIt
 Group gPT
 Group gP1
 Group gP2
 Group gTht
+Group gThtt
+Group gThtu
 Group gBiliardo
 Group gAntibagnoPI
 Group gAppartamentoArancione
@@ -12,22 +15,50 @@ Group gAntibagnoPT
 Group gSalone
 // Number DO1                  "Digital Output index 1 [%d]"     { channel="modbus:data:localhostTCP:coils:do1:number" }
 // Number DO2                  "Digital Output index 2 [%d]"     { channel="modbus:data:localhostTCP:coils:do2:number" }
-Number Termoumidostato1T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPI, gBiliardo, gTht)                   { channel="modbus:data:localhostTCP:holding:Tht1t:number" }
-Number Termoumidostato1U    "Umidità [%.1f %%]"           <humidity> (gAll, gPI, gBiliardo, gTht)                      { channel="modbus:data:localhostTCP:holding:Tht1u:number" }
-Number Termoumidostato1S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPI, gBiliardo, gTht)                        { channel="modbus:data:localhostTCP:holding2:Tht1s:number" }
+Number Termoumidostato1T    "Temperatura [%.1f °C]"      <temperature> (gAll, gPI, gBiliardo, gTht, gThtt, gPIt)                   { channel="modbus:data:localhostTCP:holding:Tht1t:number" }
+Number Termoumidostato1U    "Umidità [%.1f %%]"           <humidity> (gAll, gPI, gBiliardo, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding:Tht1u:number" }
+Number Termoumidostato1S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPI, gBiliardo, gTht)                        { channel="modbus:data:localhostTCP:holding10:Tht1s:number" }
 
-Number Termoumidostato2T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPI, gAntibagnoPI, gTht)                     { channel="modbus:data:localhostTCP:holding:Tht2t:number" }
-Number Termoumidostato2U    "Umidità [%.1f %%]"           <humidity> (gAll, gPI, gAntibagnoPI, gTht)                        { channel="modbus:data:localhostTCP:holding:Tht2u:number" }
-Number Termoumidostato2S    "SetPoint [%.1f °C]"        <temperature> (gAll, gPI, gBiliardo, gTht)                                { channel="modbus:data:localhostTCP:holding2:Tht2s:number" }
+Number Termoumidostato2T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPI, gAntibagnoPI, gTht, gThtt, gPIt)                     { channel="modbus:data:localhostTCP:holding:Tht2t:number" }
+Number Termoumidostato2U    "Umidità [%.1f %%]"           <humidity> (gAll, gPI, gAntibagnoPI, gTht, gThtu)                        { channel="modbus:data:localhostTCP:holding:Tht2u:number" }
+Number Termoumidostato2S    "SetPoint [%.1f °C]"        <temperature> (gAll, gPI, gBiliardo, gTht)                                { channel="modbus:data:localhostTCP:holding10:Tht2s:number" }
 
-Number Termoumidostato3T    "Temperatura [%.1f]"         <temperature> (gAll, gPT, gAppartamentoArancione, gTht)              { channel="modbus:data:localhostTCP:holding:Tht3t:number" }
-Number Termoumidostato3U    "Umidità [%.1f %% °C]"        <humidity> (gAll, gPT, gAppartamentoArancione, gTht)                 { channel="modbus:data:localhostTCP:holding:Tht3u:number" }
-Number Termoumidostato3S    "SetPoint [%.1f °C]"        <temperature> (gAll, gPI, gBiliardo, gTht)                                { channel="modbus:data:localhostTCP:holding2:Tht3s:number" }
+Number Termoumidostato3T    "Temperatura [%.1f]"         <temperature> (gAll, gPT, gAppartamentoArancione, gTht, gThtt)              { channel="modbus:data:localhostTCP:holding:Tht3t:number" }
+Number Termoumidostato3U    "Umidità [%.1f %% °C]"        <humidity> (gAll, gPT, gAppartamentoArancione, gTht, gThtu)                 { channel="modbus:data:localhostTCP:holding:Tht3u:number" }
+Number Termoumidostato3S    "SetPoint [%.1f °C]"        <temperature> (gAll, gPI, gBiliardo, gTht)                                { channel="modbus:data:localhostTCP:holding10:Tht3s:number" }
 
-Number Termoumidostato4T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAngoloTV, gTht)                   { channel="modbus:data:localhostTCP:holding:Tht4t:number" }
-Number Termoumidostato4U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAngoloTV, gTht)                      { channel="modbus:data:localhostTCP:holding:Tht4u:number" }
-Number Termoumidostato4S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAngoloTV, gTht)                    { channel="modbus:data:localhostTCP:holding2:Tht4s:number" }
+Number Termoumidostato4T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAngoloTV, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding1:Tht4t:number" }
+Number Termoumidostato4U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAngoloTV, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding1:Tht4u:number" }
+Number Termoumidostato4S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAngoloTV, gTht)                            { channel="modbus:data:localhostTCP:holding10:Tht4s:number" }
 
-Number Termoumidostato5T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht)                   { channel="modbus:data:localhostTCP:holding:Tht5t:number" }
-Number Termoumidostato5U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht)                      { channel="modbus:data:localhostTCP:holding:Tht5u:number" }
-Number Termoumidostato5S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                    { channel="modbus:data:localhostTCP:holding2:Tht5s:number" }
+Number Termoumidostato5T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding1:Tht5t:number" }
+Number Termoumidostato5U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding1:Tht5u:number" }
+Number Termoumidostato5S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht5s:number" }
+
+Number Termoumidostato6T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding1:Tht6t:number" }
+Number Termoumidostato6U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding1:Tht6u:number" }
+Number Termoumidostato6S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht6s:number" }
+
+Number Termoumidostato7T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding2:Tht7t:number" }
+Number Termoumidostato7U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding2:Tht7u:number" }
+Number Termoumidostato7S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                          { channel="modbus:data:localhostTCP:holding10:Tht7s:number" }
+
+Number Termoumidostato8T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding2:Tht8t:number" }
+Number Termoumidostato8U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding2:Tht8u:number" }
+Number Termoumidostato8S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht8s:number" }
+
+Number Termoumidostato9T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding2:Tht9t:number" }
+Number Termoumidostato9U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding2:Tht9u:number" }
+Number Termoumidostato9S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht9s:number" }
+
+Number Termoumidostato10T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding3:Tht10t:number" }
+Number Termoumidostato10U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding3:Tht10u:number" }
+Number Termoumidostato10S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht10s:number" }
+
+Number Termoumidostato11T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding3:Tht11t:number" }
+Number Termoumidostato11U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding3:Tht11u:number" }
+Number Termoumidostato11S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht11s:number" }
+
+Number Termoumidostato12T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding3:Tht12t:number" }
+Number Termoumidostato12U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding3:Tht12u:number" }
+Number Termoumidostato12S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht12s:number" }

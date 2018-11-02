@@ -14,7 +14,7 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato2U
             Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=0.5
         }
-        Text label="Appartamento arancione" icon="bedroom"{
+        Text label="Appartamento arancione" icon="bedroom_orange"{
             Default item=Termoumidostato3T
             Default item=Termoumidostato3U
             Setpoint item=Termoumidostato3S minValue=10 maxValue=30 step=0.5
@@ -29,6 +29,33 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato5U
             Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=0.5
         }
+         Text label="Salone" icon="terrace"{
+            Default item=Termoumidostato6T
+            Default item=Termoumidostato6U
+            Setpoint item=Termoumidostato6S minValue=10 maxValue=30 step=0.5
+        }
+        Text label="Cucina" icon="kitchen"{
+            Default item=Termoumidostato7T
+            Default item=Termoumidostato7U
+            Setpoint item=Termoumidostato7S minValue=10 maxValue=30 step=0.5
+        }
+        Text label="Appartamento rosso" icon="bedroom_red"{
+            Default item=Termoumidostato8T
+            Default item=Termoumidostato8U
+            Setpoint item=Termoumidostato8S minValue=10 maxValue=30 step=0.5
+        }
+        Text label="Appartamento verde" icon="bedroom_blue"{
+            Default item=Termoumidostato9T
+            Default item=Termoumidostato9U
+            Setpoint item=Termoumidostato9S minValue=10 maxValue=30 step=0.5
+        }
+        Text label="Corridoio" icon="corridor"{
+            Default item=Termoumidostato10T
+            Default item=Termoumidostato10U
+            Setpoint item=Termoumidostato10S minValue=10 maxValue=30 step=0.5
+        }
+   
+   
     }
     Frame label="Gruppi"
 	{

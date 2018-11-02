@@ -1,28 +1,56 @@
-Bridge modbus:tcp:localhostTCP [ host="192.168.178.40", port=502, id=1 ] {
+Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
 
-    // read-write for coils. Reading 4 coils, with index 4, and 5.
-    // These correspond to input register numbers 000005, and 000005
-    Bridge poller coils [ start=0, length=2, refresh=1000, type="coil" ] {
-        // Note the zero based indexing: first coil is index 0.
-       Thing data do1 [ readStart="0", readValueType="bit", writeStart="0", writeValueType="bit", writeType="coil" ]
-       Thing data do2 [ readStart="1", readValueType="bit", writeStart="1", writeValueType="bit", writeType="coil" ]
+    // // read-write for coils. Reading 4 coils, with index 4, and 5.
+    // // These correspond to input register numbers 000005, and 000005
+    // Bridge poller coils [ start=0, length=2, refresh=1000, type="coil" ] {
+    //     // Note the zero based indexing: first coil is index 0.
+    //   Thing data do1 [ readStart="0", readValueType="bit", writeStart="0", writeValueType="bit", writeType="coil" ]
+    //   Thing data do2 [ readStart="1", readValueType="bit", writeStart="1", writeValueType="bit", writeType="coil" ]
+    // }
+    Bridge poller holding [ start=16, length=26, refresh=5000, type="holding" ] {
+        Thing data Tht1t [ readStart="16", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht1u [ readStart="17", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht2t [ readStart="20", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht2u [ readStart="21", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht3t [ readStart="24", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht3u [ readStart="25", readValueType="int16", readTransform="JS(divide10.js)"  ]
     }
-    Bridge poller holding [ start=16, length=22, refresh=1000, type="holding" ] {
-        Thing data Tht1t [ readStart="16", readValueType="float32" ]
-        Thing data Tht1u [ readStart="17", readValueType="float32" ]
-        Thing data Tht2t [ readStart="20", readValueType="float32" ]
-        Thing data Tht2u [ readStart="21", readValueType="float32" ]
-        Thing data Tht3t [ readStart="24", readValueType="float32" ]
-        Thing data Tht3u [ readStart="25", readValueType="float32" ]
+    Bridge poller holding1 [ start=27, length=38, refresh=5000, type="holding" ] {      
+        Thing data Tht4t [ readStart="28", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht4u [ readStart="29", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht5t [ readStart="32", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht5u [ readStart="33", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht6t [ readStart="36", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht6u [ readStart="37", readValueType="int16", readTransform="JS(divide10.js)" ]
     }
-    Bridge poller holding2 [ start=101, length=22, refresh=1000, type="holding" ] {
-        Thing data Tht1s [ readStart="101", readValueType="float32", writeStart="101", writeValueType="float32", writeType="holding"]
-        Thing data Tht2s [ readStart="102", readValueType="float32", writeStart="102", writeValueType="float32", writeType="holding"]
-        Thing data Tht3s [ readStart="103", readValueType="float32", writeStart="103", writeValueType="float32", writeType="holding"]
-        Thing data Tht4s [ readStart="104", readValueType="float32", writeStart="104", writeValueType="float32", writeType="holding"]
-        Thing data Tht5s [ readStart="105", readValueType="float32", writeStart="105", writeValueType="float32", writeType="holding"]
-        Thing data Tht6s [ readStart="106", readValueType="float32", writeStart="106", writeValueType="float32", writeType="holding"]
-        Thing data Tht7s [ readStart="107", readValueType="float32", writeStart="107", writeValueType="float32", writeType="holding"]
-        Thing data Tht8s [ readStart="108", readValueType="float32", writeStart="108", writeValueType="float32", writeType="holding"]
+    Bridge poller holding2 [ start=39, length=50, refresh=5000, type="holding" ] {      
+        Thing data Tht7t [ readStart="40", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht7u [ readStart="41", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht8t [ readStart="44", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht8u [ readStart="45", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht9t [ readStart="48", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht9u [ readStart="49", readValueType="int16", readTransform="JS(divide10.js)" ]
+    }
+    Bridge poller holding3 [ start=51, length=58, refresh=5000, type="holding" ] {      
+        Thing data Tht10t [ readStart="52", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht10u [ readStart="53", readValueType="int16", readTransform="JS(divide10.js)"  ]
+        Thing data Tht11t [ readStart="54", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht11u [ readStart="55", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht12t [ readStart="56", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht12u [ readStart="57", readValueType="int16", readTransform="JS(divide10.js)" ]
+    }
+
+    Bridge poller holding10 [ start=101, length=110, refresh=5000, type="holding" ] {
+        Thing data Tht1s [ readStart="101", readValueType="int16", readTransform="JS(divide10.js)", writeStart="101", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht2s [ readStart="102", readValueType="int16", readTransform="JS(divide10.js)", writeStart="102", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht3s [ readStart="103", readValueType="int16", readTransform="JS(divide10.js)", writeStart="103", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht4s [ readStart="104", readValueType="int16", readTransform="JS(divide10.js)", writeStart="104", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht5s [ readStart="105", readValueType="int16", readTransform="JS(divide10.js)", writeStart="105", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht6s [ readStart="106", readValueType="int16", readTransform="JS(divide10.js)", writeStart="106", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht7s [ readStart="107", readValueType="int16", readTransform="JS(divide10.js)", writeStart="107", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht8s [ readStart="108", readValueType="int16", readTransform="JS(divide10.js)", writeStart="108", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht9s [ readStart="109", readValueType="int16", readTransform="JS(divide10.js)", writeStart="109", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht10s [ readStart="109", readValueType="int16", readTransform="JS(divide10.js)", writeStart="110", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+
     }
 }
