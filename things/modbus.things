@@ -2,11 +2,113 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
 
     // // read-write for coils. Reading 4 coils, with index 4, and 5.
     // // These correspond to input register numbers 000005, and 000005
-    // Bridge poller coils [ start=0, length=2, refresh=1000, type="coil" ] {
-    //     // Note the zero based indexing: first coil is index 0.
-    //   Thing data do1 [ readStart="0", readValueType="bit", writeStart="0", writeValueType="bit", writeType="coil" ]
-    //   Thing data do2 [ readStart="1", readValueType="bit", writeStart="1", writeValueType="bit", writeType="coil" ]
-    // }
+    Bridge poller coils [ start=32, length=38, refresh=5000, type="coil" ] {
+        // Note the zero based indexing: first coil is index 0.
+        Thing data Pompari [ readStart="32", readValueType="bit"]
+        Thing data PompaPI [ readStart="33", readValueType="bit"]
+        Thing data PompaPT [ readStart="34", readValueType="bit"]
+        Thing data PompaP1 [ readStart="35", readValueType="bit"]
+        Thing data PompaTermo [ readStart="36", readValueType="bit"]
+        Thing data PompaRil [ readStart="37", readValueType="bit"]
+    }
+    Bridge poller coils1 [ start=73, length=74, refresh=5000, type="coil" ] {
+        // Note the zero based indexing: first coil is index 0.
+        Thing data AllarmeGen [ readStart="73", readValueType="bit"]        
+    }
+    Bridge poller coils2 [ start=79, length=183, refresh=5000, type="coil" ] {
+        // Note the zero based indexing: first coil is index 0.
+        Thing data TestTht1 [ readStart="79", readValueType="bit"]
+        Thing data AllTht1 [ readStart="80", readValueType="bit"]
+        Thing data ReleTht1 [ readStart="81", readValueType="bit"]
+        Thing data FReleTht1 [ readStart="82", readValueType="bit"]
+        Thing data OnTht1 [ readStart="83", readValueType="bit", writeStart="83", writeValueType="bit", writeType="coil"]
+        Thing data OffTht1 [ readStart="84", readValueType="bit", writeStart="84", writeValueType="bit", writeType="coil"] 
+
+        Thing data TestTht2 [ readStart="85", readValueType="bit"]
+        Thing data AllTht2 [ readStart="86", readValueType="bit"]
+        Thing data ReleTht2 [ readStart="87", readValueType="bit"]
+        Thing data FReleTht2 [ readStart="88", readValueType="bit"]
+        Thing data OnTht2 [ readStart="89", readValueType="bit", writeStart="89", writeValueType="bit", writeType="coil"]
+        Thing data OffTht2 [ readStart="90", readValueType="bit", writeStart="90", writeValueType="bit", writeType="coil"]     
+
+        Thing data TestTht3 [ readStart="91", readValueType="bit"]
+        Thing data AllTht3 [ readStart="92", readValueType="bit"]
+        Thing data ReleTht3 [ readStart="93", readValueType="bit"]
+        Thing data FReleTht3 [ readStart="94", readValueType="bit"]
+        Thing data OnTht3 [ readStart="95", readValueType="bit", writeStart="95", writeValueType="bit", writeType="coil"]
+        Thing data OffTht3 [ readStart="96", readValueType="bit", writeStart="96", writeValueType="bit", writeType="coil"]    
+
+        Thing data TestTht4 [ readStart="97", readValueType="bit"]
+        Thing data AllTht4 [ readStart="98", readValueType="bit"]
+        Thing data ReleTht4 [ readStart="99", readValueType="bit"]
+        Thing data FReleTht4 [ readStart="100", readValueType="bit"]
+        Thing data OnTht4 [ readStart="101", readValueType="bit", writeStart="101", writeValueType="bit", writeType="coil"]
+        Thing data OffTht4 [ readStart="102", readValueType="bit", writeStart="102", writeValueType="bit", writeType="coil"]
+
+        Thing data TestTht5 [ readStart="103", readValueType="bit"]
+        Thing data AllTht5 [ readStart="104", readValueType="bit"]
+        Thing data ReleTht5 [ readStart="105", readValueType="bit"]
+        Thing data FReleTht5 [ readStart="106", readValueType="bit"]
+        Thing data OnTht5 [ readStart="107", readValueType="bit", writeStart="107", writeValueType="bit", writeType="coil"]
+        Thing data OffTht5 [ readStart="108", readValueType="bit", writeStart="125", writeValueType="bit", writeType="coil"]
+
+        Thing data TestTht6 [ readStart="109", readValueType="bit"]
+        Thing data AllTht6 [ readStart="110", readValueType="bit"]
+        Thing data ReleTht6 [ readStart="111", readValueType="bit"]
+        Thing data FReleTht6 [ readStart="112", readValueType="bit"]
+        Thing data OnTht6 [ readStart="113", readValueType="bit", writeStart="113", writeValueType="bit", writeType="coil"]
+        Thing data OffTht6 [ readStart="114", readValueType="bit", writeStart="114", writeValueType="bit", writeType="coil"]
+
+        Thing data TestTht7 [ readStart="115", readValueType="bit"]
+        Thing data AllTht7 [ readStart="116", readValueType="bit"]
+        Thing data ReleTht7 [ readStart="117", readValueType="bit"]
+        Thing data FReleTht7 [ readStart="118", readValueType="bit"]
+        Thing data OnTht7 [ readStart="119", readValueType="bit", writeStart="119", writeValueType="bit", writeType="coil"]
+        Thing data OffTht7 [ readStart="120", readValueType="bit", writeStart="120", writeValueType="bit", writeType="coil"]
+
+        Thing data TestTht8 [ readStart="121", readValueType="bit"]
+        Thing data AllTht8 [ readStart="122", readValueType="bit"]
+        Thing data ReleTht8 [ readStart="123", readValueType="bit"]
+        Thing data FReleTht8 [ readStart="124", readValueType="bit"]
+        Thing data OnTht8 [ readStart="125", readValueType="bit", writeStart="125", writeValueType="bit", writeType="coil"]
+        Thing data OffTht8 [ readStart="126", readValueType="bit", writeStart="126", writeValueType="bit", writeType="coil"] 
+
+        Thing data TestTht9 [ readStart="127", readValueType="bit"]
+        Thing data AllTht9 [ readStart="128", readValueType="bit"]
+        Thing data ReleTht9 [ readStart="129", readValueType="bit"]
+        Thing data FReleTht9 [ readStart="130", readValueType="bit"]
+        Thing data OnTht9 [ readStart="131", readValueType="bit", writeStart="131", writeValueType="bit", writeType="coil"]
+        Thing data OffTht9 [ readStart="132", readValueType="bit", writeStart="132", writeValueType="bit", writeType="coil"]
+
+        Thing data TestTht10 [ readStart="133", readValueType="bit"]
+        Thing data AllTht10 [ readStart="134", readValueType="bit"]
+        Thing data ReleTht10 [ readStart="135", readValueType="bit"]
+        Thing data FReleTht10 [ readStart="136", readValueType="bit"]
+        Thing data OnTht10 [ readStart="137", readValueType="bit", writeStart="137", writeValueType="bit", writeType="coil"]
+        Thing data OffTht10 [ readStart="138", readValueType="bit", writeStart="138", writeValueType="bit", writeType="coil"]
+
+        Thing data TestTht11 [ readStart="165", readValueType="bit"]
+        Thing data AllTht11 [ readStart="166", readValueType="bit"]
+        Thing data ReleTht11 [ readStart="167", readValueType="bit"]
+        Thing data FReleTht11 [ readStart="168", readValueType="bit"]
+        Thing data OnTht11 [ readStart="169", readValueType="bit", writeStart="169", writeValueType="bit", writeType="coil"]
+        Thing data OffTht11 [ readStart="170", readValueType="bit", writeStart="170", writeValueType="bit", writeType="coil"]
+
+        Thing data TestTht12 [ readStart="171", readValueType="bit"]
+        Thing data AllTht12 [ readStart="172", readValueType="bit"]
+        Thing data ReleTht12 [ readStart="173", readValueType="bit"]
+        Thing data FReleTht12 [ readStart="174", readValueType="bit"]
+        Thing data OnTht12 [ readStart="175", readValueType="bit", writeStart="175", writeValueType="bit", writeType="coil"]
+        Thing data OffTht12 [ readStart="176", readValueType="bit", writeStart="176", writeValueType="bit", writeType="coil"]
+
+        Thing data TestTht13 [ readStart="177", readValueType="bit"]
+        Thing data AllTht13 [ readStart="178", readValueType="bit"]
+        Thing data ReleTht13 [ readStart="179", readValueType="bit"]
+        Thing data FReleTht13 [ readStart="180", readValueType="bit"]
+        Thing data OnTht13 [ readStart="181", readValueType="bit", writeStart="181", writeValueType="bit", writeType="coil"]
+        Thing data OffTht13 [ readStart="182", readValueType="bit", writeStart="182", writeValueType="bit", writeType="coil"]                                                       
+    }
+
     Bridge poller holding [ start=16, length=26, refresh=5000, type="holding" ] {
         Thing data Tht1t [ readStart="16", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht1u [ readStart="17", readValueType="int16", readTransform="JS(divide10.js)" ]
@@ -31,16 +133,17 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data Tht9t [ readStart="48", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht9u [ readStart="49", readValueType="int16", readTransform="JS(divide10.js)" ]
     }
-    Bridge poller holding3 [ start=51, length=58, refresh=5000, type="holding" ] {      
+    Bridge poller holding3 [ start=51, length=60, refresh=5000, type="holding" ] {      
         Thing data Tht10t [ readStart="52", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht10u [ readStart="53", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht11t [ readStart="54", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht11u [ readStart="55", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht12t [ readStart="56", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht12u [ readStart="57", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht13t [ readStart="58", readValueType="int16", readTransform="JS(divide10.js)" ]
+        Thing data Tht13u [ readStart="59", readValueType="int16", readTransform="JS(divide10.js)" ]
     }
-
-    Bridge poller holding10 [ start=101, length=110, refresh=5000, type="holding" ] {
+    Bridge poller holding10 [ start=100, length=114, refresh=5000, type="holding" ] {
         Thing data Tht1s [ readStart="101", readValueType="int16", readTransform="JS(divide10.js)", writeStart="101", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
         Thing data Tht2s [ readStart="102", readValueType="int16", readTransform="JS(divide10.js)", writeStart="102", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
         Thing data Tht3s [ readStart="103", readValueType="int16", readTransform="JS(divide10.js)", writeStart="103", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
@@ -50,7 +153,22 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data Tht7s [ readStart="107", readValueType="int16", readTransform="JS(divide10.js)", writeStart="107", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
         Thing data Tht8s [ readStart="108", readValueType="int16", readTransform="JS(divide10.js)", writeStart="108", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
         Thing data Tht9s [ readStart="109", readValueType="int16", readTransform="JS(divide10.js)", writeStart="109", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
-        Thing data Tht10s [ readStart="109", readValueType="int16", readTransform="JS(divide10.js)", writeStart="110", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
-
+        Thing data Tht10s [ readStart="110", readValueType="int16", readTransform="JS(divide10.js)", writeStart="110", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht11s [ readStart="111", readValueType="int16", readTransform="JS(divide10.js)", writeStart="111", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht12s [ readStart="112", readValueType="int16", readTransform="JS(divide10.js)", writeStart="112", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+        Thing data Tht13s [ readStart="113", readValueType="int16", readTransform="JS(divide10.js)", writeStart="113", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
+    }
+    Bridge poller holding20 [start=5005, length=2, refresh=5000, type="holding"] {
+        Thing data Sfz1 [readStart="5005", readValueType="int16", writeStart="5005", writeValueType="int16", writeType="holding"]
+    }
+    Bridge poller holding21 [start=5020, length=2, refresh=5000, type="holding"] {
+        Thing data Sfz2 [readStart="5020", readValueType="int16", writeStart="5020", writeValueType="int16", writeType="holding"]
+    }
+    Bridge poller holding22 [start=5035, length=2, refresh=5000, type="holding"] {
+        Thing data Sfz3 [readStart="5035", readValueType="int16", writeStart="5035", writeValueType="int16", writeType="holding"]
+        // Thing data SFascia1 [readStart="5009", readValueType="int16", writeStart="5009", writeValueType="int16", writeType="holding"]
+        // Thing data SFascia2 [readStart="5012", readValueType="int16", writeStart="5012", writeValueType="int16", writeType="holding"]
+        // Thing data SFascia3 [readStart="5015", readValueType="int16", writeStart="5015", writeValueType="int16", writeType="holding"]
+        // Thing data SFascia4 [readStart="5018", readValueType="int16", writeStart="5015", writeValueType="int16", writeType="holding"]
     }
 }

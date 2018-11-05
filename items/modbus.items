@@ -7,58 +7,157 @@ Group gP2
 Group gTht
 Group gThtt
 Group gThtu
+Group gThts
 Group gBiliardo
 Group gAntibagnoPI
-Group gAppartamentoArancione
+Group gAppArancione
 Group gAngoloTV
 Group gAntibagnoPT
 Group gSalone
-// Number DO1                  "Digital Output index 1 [%d]"     { channel="modbus:data:localhostTCP:coils:do1:number" }
-// Number DO2                  "Digital Output index 2 [%d]"     { channel="modbus:data:localhostTCP:coils:do2:number" }
-Number Termoumidostato1T    "Temperatura [%.1f °C]"      <temperature> (gAll, gPI, gBiliardo, gTht, gThtt, gPIt)                   { channel="modbus:data:localhostTCP:holding:Tht1t:number" }
-Number Termoumidostato1U    "Umidità [%.1f %%]"           <humidity> (gAll, gPI, gBiliardo, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding:Tht1u:number" }
-Number Termoumidostato1S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPI, gBiliardo, gTht)                        { channel="modbus:data:localhostTCP:holding10:Tht1s:number" }
+Group gCucina
+Group gAppRosso
+Group gAppVerde
+Group gCorridoio
+Group gArianna
+Group gGiolo
+Group gEleonora
+Group gPompe
+Group:Number:AVG gAvgTemperatura "Temperatura media [%.1f °C]" 
 
-Number Termoumidostato2T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPI, gAntibagnoPI, gTht, gThtt, gPIt)                     { channel="modbus:data:localhostTCP:holding:Tht2t:number" }
-Number Termoumidostato2U    "Umidità [%.1f %%]"           <humidity> (gAll, gPI, gAntibagnoPI, gTht, gThtu)                        { channel="modbus:data:localhostTCP:holding:Tht2u:number" }
-Number Termoumidostato2S    "SetPoint [%.1f °C]"        <temperature> (gAll, gPI, gBiliardo, gTht)                                { channel="modbus:data:localhostTCP:holding10:Tht2s:number" }
+Number Pomparicircolo   "Pompa Ricircolo [MAP(pomp.map):%s]"     <pump> (gPompe) { channel="modbus:data:localhostTCP:coils:Pompari:number" }
+Number PompaPianoInterrato  "Pompa Piano Interrato [MAP(pomp.map):%s]"  <pump> (gPompe)  { channel="modbus:data:localhostTCP:coils:PompaPI:number" }
+Number PompaPianoTerra  "Pompa Piano terra [MAP(pomp.map):%s]"   <pump> (gPompe) { channel="modbus:data:localhostTCP:coils:PompaPT:number" }
+Number PompaPianoPrimo  "Pompa Piano primo [MAP(pomp.map):%s]"  <pump>  (gPompe) { channel="modbus:data:localhostTCP:coils:PompaP1:number" }
+Number PompaTermosifoni "Pompa Termosifoni [MAP(pomp.map):%s]"  <pump>  (gPompe) { channel="modbus:data:localhostTCP:coils:PompaTermo:number" }
+Number PompaRilancio    "Pompa rilancio tra accumulo e collettore [MAP(pomp.map):%s]"  <pump> (gPompe)  { channel="modbus:data:localhostTCP:coils:PompaRil:number" }
+Number AllarmeGenerale  "Allarme generale [MAP(alarm.map):%s]"  <alarm>   { channel="modbus:data:localhostTCP:coils1:AllarmeGen:number" }
 
-Number Termoumidostato3T    "Temperatura [%.1f]"         <temperature> (gAll, gPT, gAppartamentoArancione, gTht, gThtt)              { channel="modbus:data:localhostTCP:holding:Tht3t:number" }
-Number Termoumidostato3U    "Umidità [%.1f %% °C]"        <humidity> (gAll, gPT, gAppartamentoArancione, gTht, gThtu)                 { channel="modbus:data:localhostTCP:holding:Tht3u:number" }
-Number Termoumidostato3S    "SetPoint [%.1f °C]"        <temperature> (gAll, gPI, gBiliardo, gTht)                                { channel="modbus:data:localhostTCP:holding10:Tht3s:number" }
+Number StatoFZ1 "PI"  { channel="modbus:data:localhostTCP:holding20:Sfz1:number" }
+Number StatoFZ2 "PT"  { channel="modbus:data:localhostTCP:holding21:Sfz2:number" }
+Number StatoFZ3 "P1"  { channel="modbus:data:localhostTCP:holding22:Sfz3:number" }
 
-Number Termoumidostato4T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAngoloTV, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding1:Tht4t:number" }
-Number Termoumidostato4U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAngoloTV, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding1:Tht4u:number" }
-Number Termoumidostato4S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAngoloTV, gTht)                            { channel="modbus:data:localhostTCP:holding10:Tht4s:number" }
+// Number StFascia1    "F1"  <settings>   { channel="modbus:data:localhostTCP:holding20:SFascia1:number" }
+// Number StFascia2    "F2"  <settings>   { channel="modbus:data:localhostTCP:holding20:SFascia2:number" }
+// Number StFascia3    "PI"  <settings>   { channel="modbus:data:localhostTCP:holding20:SFascia3:number" }
+// Number StFascia4    "F4"  <settings>   { channel="modbus:data:localhostTCP:holding20:SFascia4:number" }
 
-Number Termoumidostato5T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding1:Tht5t:number" }
-Number Termoumidostato5U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding1:Tht5u:number" }
-Number Termoumidostato5S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht5s:number" }
 
-Number Termoumidostato6T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding1:Tht6t:number" }
-Number Termoumidostato6U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding1:Tht6u:number" }
-Number Termoumidostato6S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht6s:number" }
+Number Termoumidostato1T    "Temp. Biliardo PI  [%.1f °C]"  <temperature> (gAll, gPI, gBiliardo, gTht, gThtt, gPIt, gAvgTemperatura)    { channel="modbus:data:localhostTCP:holding:Tht1t:number" }
+Number Termoumidostato1U    "Umidità Biliardo PI [%.1f %%]" <humidity> (gAll, gPI, gBiliardo, gTht, gThtu)  { channel="modbus:data:localhostTCP:holding:Tht1u:number" }
+Number Termoumidostato1S    "SetPoint Biliardo PI [%.1f °C]"    <temperature> (gAll, gPI, gBiliardo, gThtt, gThts)  { channel="modbus:data:localhostTCP:holding10:Tht1s:number" }
+Number AttTestina1          "Att. testina Elettrotermica Biliardo [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht1:number" }
+Number AllarmeTht1          "Allarme [%s]" <settings>   { channel="modbus:data:localhostTCP:coils2:AllTht1:number" }   
+Number StatoRele1           "Stato del relay del termostato Biliardo [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht1:number" }
+Number FeedBRele1           "Termostato Biliardo [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht1:number" }
+Number ONTht1               "Termostato ON Biliardo"  <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht1:number" }
+Number OFFTht1              "Termostato OFF Biliardo" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht1:number" }
 
-Number Termoumidostato7T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding2:Tht7t:number" }
-Number Termoumidostato7U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding2:Tht7u:number" }
-Number Termoumidostato7S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                          { channel="modbus:data:localhostTCP:holding10:Tht7s:number" }
+Number Termoumidostato2T    "Temp. Antibagno PI [%.1f °C]"  <temperature> (gAll, gPT, gAntibagnoPI, gTht, gThtt, gAvgTemperatura ) { channel="modbus:data:localhostTCP:holding:Tht2t:number" }
+Number Termoumidostato2U    "Umidità Antibagno PI [%.1f %%]"    <humidity> (gAll, gPT, gAntibagnoPI, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding:Tht2u:number" }
+Number Termoumidostato2S    "SetPoint Antibagno PI [%.1f °C]"   <temperature> (gAll, gPT, gAntibagnoPI, gThts, gThts)  { channel="modbus:data:localhostTCP:holding10:Tht2s:number" }
+Number AttTestina2          "Att. testina Elettrotermica Antibagno PI [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht2:number" }
+Number AllarmeTht2          "Allarme %s" <settings>   { channel="modbus:data:localhostTCP:coils2:AllTht2:number" }   
+Number StatoRele2           "Stato del relay del termostato Antibagno PI [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht2:number" }
+Number FeedBRele2           "Termostato Antibagno PI [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht2:number" }
+Number ONTht2               "Termostato ON Antibagno PI" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht2:number" }
+Number OFFTht2              "Termostato OFF Antibagno PI" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht2:number" }
 
-Number Termoumidostato8T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding2:Tht8t:number" }
-Number Termoumidostato8U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding2:Tht8u:number" }
-Number Termoumidostato8S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht8s:number" }
+Number Termoumidostato3T    "Temp. App.arancione PT [%.1f °C]"  <temperature> (gAll, gPT, gAntibagnoPI, gTht, gThtt, gAvgTemperatura)   { channel="modbus:data:localhostTCP:holding:Tht3t:number" }
+Number Termoumidostato3U    "Umidità App.arancione PT [%.1f %%]"    <humidity> (gAll, gPT, gAntibagnoPI, gTht, gThtu)   { channel="modbus:data:localhostTCP:holding:Tht3u:number" }
+Number Termoumidostato3S    "SetPoint App.arancione PT [%.1f °C]"   <temperature> (gAll, gPT, gAntibagnoPI, gTht, gThts)    { channel="modbus:data:localhostTCP:holding10:Tht3s:number" }
+Number AttTestina3          "Att. testina Elettrotermica App.arancione PT [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht3:number" }
+Number StatoRele3           "Stato del relay del termostato App.arancione PT [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht3:number" }
+Number FeedBRele3           "Termostato App.arancione PT [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht3:number" }
+Number ONTht3               "Termostato ON App.arancione" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht3:number" }
+Number OFFTht3              "Termostato OFF App.arancione" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht3:number" }
 
-Number Termoumidostato9T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding2:Tht9t:number" }
-Number Termoumidostato9U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding2:Tht9u:number" }
-Number Termoumidostato9S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht9s:number" }
+Number Termoumidostato4T    "Temp. AngoloTV [%.1f °C]"  <temperature> (gAll, gPT, gAngoloTV, gTht, gThtt, gAvgTemperatura)   { channel="modbus:data:localhostTCP:holding1:Tht4t:number" }
+Number Termoumidostato4U    "Umidità AngoloTV [%.1f %%]"    <humidity> (gAll, gPT, gAngoloTV, gTht, gThtu)   { channel="modbus:data:localhostTCP:holding1:Tht4u:number" }
+Number Termoumidostato4S    "SetPoint AngoloTV [%.1f °C]"   <temperature> (gAll, gPT, gAngoloTV, gTht, gThts)    { channel="modbus:data:localhostTCP:holding10:Tht4s:number" }
+Number AttTestina4          "Att. testina Elettrotermica AngoloTV [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht4:number" }
+Number StatoRele4           "Stato del relay del termostato AngoloTV [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht4:number" }
+Number FeedBRele4           "Termostato AngoloTV [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht4:number" }
+Number ONTht4               "Termostato ON AngoloTV" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht4:number" }
+Number OFFTht4              "Termostato OFF AngoloTV" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht4:number" }
 
-Number Termoumidostato10T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding3:Tht10t:number" }
-Number Termoumidostato10U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding3:Tht10u:number" }
-Number Termoumidostato10S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht10s:number" }
 
-Number Termoumidostato11T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding3:Tht11t:number" }
-Number Termoumidostato11U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding3:Tht11u:number" }
-Number Termoumidostato11S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht11s:number" }
+Number Termoumidostato5T    "Temp. AntibagnoPT [%.1f °C]"   <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt, gAvgTemperatura)   { channel="modbus:data:localhostTCP:holding1:Tht5t:number" }
+Number Termoumidostato5U    "Umidità AntibagnoPT [%.1f %%]" <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)   { channel="modbus:data:localhostTCP:holding1:Tht5u:number" }
+Number Termoumidostato5S    "SetPoint AntibagnoPT [%.1f °C]"    <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThts)    { channel="modbus:data:localhostTCP:holding10:Tht5s:number" }
+Number AttTestina5          "Att. testina Elettrotermica AntibagnoPT [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht5:number" }
+Number StatoRele5           "Stato del relay del termostato AntibagnoPT [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht5:number" }
+Number FeedBRele5           "Termostato AntibagnoPT [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht5:number" }
+Number ONTht5               "Termostato ON AntibagnoPT" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht5:number" }
+Number OFFTht5              "Termostato OFF AntibagnoPT" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht5:number" }
 
-Number Termoumidostato12T    "Temperatura [%.1f °C]"       <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt)                   { channel="modbus:data:localhostTCP:holding3:Tht12t:number" }
-Number Termoumidostato12U    "Umidità [%.1f %%]"           <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)                      { channel="modbus:data:localhostTCP:holding3:Tht12u:number" }
-Number Termoumidostato12S    "SetPoint [%.1f °C]"          <temperature> (gAll, gPT, gAntibagnoPT, gTht)                           { channel="modbus:data:localhostTCP:holding10:Tht12s:number" }
+Number Termoumidostato6T    "Temp. Salone  [%.1f °C]"   <temperature> (gAll, gPT, gSalone, gTht, gThtt, gAvgTemperatura)    { channel="modbus:data:localhostTCP:holding1:Tht6t:number" }
+Number Termoumidostato6U    "Umidità Salone [%.1f %%]"  <humidity> (gAll, gPT, gSalone, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding1:Tht6u:number" }
+Number Termoumidostato6S    "SetPoint Salone [%.1f °C]" <temperature> (gAll, gPT, gSalone, gTht, gThts) { channel="modbus:data:localhostTCP:holding10:Tht6s:number" }
+Number AttTestina6          "Att. testina Elettrotermica Salone [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht6:number" }
+Number StatoRele6           "Stato del relay del termostato Salone [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht6:number" }
+Number FeedBRele6           "Termostato Salone [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht6:number" }
+Number ONTht6               "Termostato ON Salone" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht6:number" }
+Number OFFTht6              "Termostato OFF Salone" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht6:number" }
+
+Number Termoumidostato7T    "Temp. Cucina [%.1f °C]"    <temperature> (gAll, gPT, gCucina, gTht, gThtt, gAvgTemperatura)    { channel="modbus:data:localhostTCP:holding2:Tht7t:number" }
+Number Termoumidostato7U    "Umidità Cucina [%.1f %%]" <humidity> (gAll, gPT, gCucina, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding2:Tht7u:number" }
+Number Termoumidostato7S    "SetPoint Cucina [%.1f °C]" <temperature> (gAll, gPT, gCucina, gTht, gThts) { channel="modbus:data:localhostTCP:holding10:Tht7s:number" }
+Number AttTestina7          "Att. testina Elettrotermica Cucina [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht7:number" }
+Number StatoRele7           "Stato del relay del termostato Cucina [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht7:number" }
+Number FeedBRele7           "Termostato Cucina [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht7:number" }
+Number ONTht7               "Termostato ON Cucina" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht7:number" }
+Number OFFTht7              "Termostato OFF Cucina " <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht7:number" }
+
+Number Termoumidostato8T    "Temp. App.rosso [%.1f °C]" <temperature> (gAll, gPT, gAppRosso, gTht, gThtt, gAvgTemperatura)    { channel="modbus:data:localhostTCP:holding2:Tht8t:number" }
+Number Termoumidostato8U    "Umidità App.rosso [%.1f %%]"   <humidity> (gAll, gPT, gAppRosso, gTht, gThtu)  { channel="modbus:data:localhostTCP:holding2:Tht8u:number" }
+Number Termoumidostato8S    "SetPoint App.rosso [%.1f °C]"  <temperature> (gAll, gPT, gAppRosso, gTht, gThts)   { channel="modbus:data:localhostTCP:holding10:Tht8s:number" }
+Number AttTestina8          "Att. testina Elettrotermica App.rosso [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht8:number" }
+Number StatoRele8           "Stato del relay del termostato App.rosso [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht8:number" }
+Number FeedBRele8           "Termostato App.rosso [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht8:number" }
+Number ONTht8               "Termostato ON App.rosso" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht8:number" }
+Number OFFTht8              "Termostato OFF App.rosso" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht8:number" }
+
+Number Termoumidostato9T    "Temp. App.verde [%.1f °C]" <temperature> (gAll, gPT, gAppVerde, gTht, gThtt, gAvgTemperatura)  { channel="modbus:data:localhostTCP:holding2:Tht9t:number" }
+Number Termoumidostato9U    "Umidità App.verde [%.1f %%]"   <humidity> (gAll, gPT, gAppVerde, gTht, gThtu)  { channel="modbus:data:localhostTCP:holding2:Tht9u:number" }
+Number Termoumidostato9S    "SetPoint App.verde [%.1f °C]"  <temperature> (gAll, gPT, gAppVerde, gTht, gThts)   { channel="modbus:data:localhostTCP:holding10:Tht9s:number" }
+Number AttTestina9          "Att. testina Elettrotermica App.verde [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht9:number" }
+Number StatoRele9           "Stato del relay del termostato App.verde [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht9:number" }
+Number FeedBRele9           "Termostato App.verde"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht9:number" }
+Number ONTht9               "Termostato ON App.verde" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht9:number" }
+Number OFFTht9              "Termostato OFF App.verde" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht9:number" }
+
+Number Termoumidostato10T    "Temp. Corridoio [%.1f °C]"    <temperature> (gAll, gPT, gCorridoio, gTht, gThtt, gAvgTemperatura) { channel="modbus:data:localhostTCP:holding3:Tht10t:number" }
+Number Termoumidostato10U    "Umidità Corridoio [%.1f %%]"  <humidity> (gAll, gPT, gCorridoio, gTht, gThtu) { channel="modbus:data:localhostTCP:holding3:Tht10u:number" }
+Number Termoumidostato10S    "SetPoint Corridoio [%.1f °C]" <temperature> (gAll, gPT, gCorridoio, gTht, gThts)  { channel="modbus:data:localhostTCP:holding10:Tht10s:number" }
+Number AttTestina10          "Att. testina Elettrotermica Corridoio [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht10:number" }
+Number StatoRele10           "Stato del relay del termostato Corridoio [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht10:number" }
+Number FeedBRele10           "Termostato Corridoio [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht10:number" }
+Number ONTht10               "Termostato ON Corridoio" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht10:number" }
+Number OFFTht10              "Termostato OFF Corridoio" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht10:number" }
+
+Number Termoumidostato11T    "Temp. Arianna [%.1f °C]"  <temperature> (gAll, gPT, gArianna, gTht, gThtt, gAvgTemperatura)  { channel="modbus:data:localhostTCP:holding3:Tht11t:number" }
+Number Termoumidostato11U    "Umidità Arianna [%.1f %%]"    <humidity> (gAll, gPT, gArianna, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding3:Tht11u:number" }
+Number Termoumidostato11S    "SetPoint Arianna [%.1f °C]"   <temperature> (gAll, gPT, gArianna, gTht, gThts) { channel="modbus:data:localhostTCP:holding10:Tht11s:number" }
+Number AttTestina11         "Att. testina Elettrotermica Arianna [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht11:number" }
+Number StatoRele11           "Stato del relay del termostato Arianna [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht11:number" }
+Number FeedBRele11           "Termostato Arianna [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht11:number" }
+Number ONTht11               "Termostato ON Arianna" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht11:number" }
+Number OFFTht11              "Termostato OFF Arianna" <settings>  { channel="modbus:data:localhostTCP:coils2:OffTht11:number" }
+
+Number Termoumidostato12T    "Temp. Giolo [%.1f °C]"    <temperature> (gAll, gPT, gGiolo, gTht, gThtt, gAvgTemperatura)  { channel="modbus:data:localhostTCP:holding3:Tht12t:number" }
+Number Termoumidostato12U    "Umidità Giolo [%.1f %%]"  <humidity> (gAll, gPT, gGiolo, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding3:Tht12u:number" }
+Number Termoumidostato12S    "SetPoint Giolo [%.1f °C]" <temperature> (gAll, gPT, gGiolo, gTht, gThts) { channel="modbus:data:localhostTCP:holding10:Tht12s:number" }
+Number AttTestina12         "Att. testina Elettrotermica Arianna [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht12:number" }
+Number StatoRele12           "Stato del relay del termostato Arianna [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht12:number" }
+Number FeedBRele12           "Termostato Arianna [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht12:number" }
+Number ONTht12               "Termostato ON Arianna" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht12:number" }
+Number OFFTht12              "Termostato OFF Arianna" <settings>  { channel="modbus:data:localhostTCP:coils2:OffTht12:number" }
+
+Number Termoumidostato13T    "Temp. Eleonora [%.1f °C]" <temperature> (gAll, gPT, gEleonora, gTht, gThtt, gAvgTemperatura)    { channel="modbus:data:localhostTCP:holding3:Tht13t:number" }
+Number Termoumidostato13U    "Umidità Eleonora [%.1f %%]"   <humidity> (gAll, gPT, gEleonora, gTht, gThtu)  { channel="modbus:data:localhostTCP:holding3:Tht13u:number" }
+Number Termoumidostato13S    "SetPoint Eleonora [%.1f °C]"  <temperature> (gAll, gPT, gEleonora, gTht, gThts)   { channel="modbus:data:localhostTCP:holding10:Tht13s:number" }
+Number AttTestina13         "Att. testina Elettrotermica Arianna [MAP(testina.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:TestTht13:number" }
+Number StatoRele13           "Stato del relay del termostato Arianna [MAP(statorele.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:ReleTht13:number" }
+Number FeedBRele13           "Termostato Arianna [MAP(feedbackr.map):%s]"  <settings>   { channel="modbus:data:localhostTCP:coils2:FReleTht13:number" }
+Number ONTht13               "Termostato ON Arianna" <settings>   { channel="modbus:data:localhostTCP:coils2:OnTht13:number" }
+Number OFFTht13              "Termostato OFF Arianna" <settings>  { channel="modbus:data:localhostTCP:coils2:OffTht13:number" }
