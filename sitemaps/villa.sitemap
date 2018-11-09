@@ -20,8 +20,9 @@ sitemap villa label="Benvenuto a CASA"
             Setpoint item=Termoumidostato1S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina1
            // Default item=AllarmeTht1
-            Default item=StatoRele1
+            Switch item=ProxyAttTermo1 mappings=[ON=ATT, OFF=DIS]
             Default item=FeedBRele1
+            Default item=StatoRele1
             //Default item=ONTht1
             //Default item=OFFTht1
         }
@@ -31,8 +32,9 @@ sitemap villa label="Benvenuto a CASA"
             Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina2
             //Default item=AllarmeTht2
-            Default item=StatoRele2
+            
             Default item=FeedBRele2
+            Default item=StatoRele2
             //Default item=ONTht2
             //Default item=OFFTht2
             
@@ -42,8 +44,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato3U
             Setpoint item=Termoumidostato3S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina3
-            Default item=StatoRele3
+            
             Default item=FeedBRele3
+            Default item=StatoRele3
             //Default item=ONTht3
             //Default item=OFFTht3
         }
@@ -52,8 +55,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato4U
             Setpoint item=Termoumidostato4S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina4
-            Default item=StatoRele4
+            
             Default item=FeedBRele4
+            Default item=StatoRele4
            // Default item=ONTht4
             //Default item=OFFTht4
         }
@@ -62,8 +66,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato5U
             Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina5
-            Default item=StatoRele5
+            
             Default item=FeedBRele5
+            Default item=StatoRele5
            // Default item=ONTht5
             //Default item=OFFTht5
         }
@@ -72,8 +77,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato6U
             Setpoint item=Termoumidostato6S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina6
-            Default item=StatoRele6
+            
             Default item=FeedBRele6
+            Default item=StatoRele6
           //  Default item=ONTht6
             //Default item=OFFTht6
         }
@@ -82,8 +88,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato7U
             Setpoint item=Termoumidostato7S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina7
-            Default item=StatoRele7
+            
             Default item=FeedBRele7
+            Default item=StatoRele7
            // Default item=ONTht7
             //Default item=OFFTht7
         }
@@ -91,9 +98,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato8T
             Default item=Termoumidostato8U
             Setpoint item=Termoumidostato8S minValue=10 maxValue=30 step=0.5
-            //Default item=AttTestina8
-            Default item=StatoRele8
+            //Default item=AttTestina8     
             Default item=FeedBRele8
+            Default item=StatoRele8
            // Default item=ONTht8
             //Default item=OFFTht8
         }
@@ -102,18 +109,21 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato9U
             Setpoint item=Termoumidostato9S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina9
+           // Switch item=FeedBRele9 mappings=[0=DISABILITATO, 1=ABILITATO]
+            Switch item=ProxyAttTermo9 mappings=[ON=ATT, OFF=DIS]
+            Default item=FeedBRele9
             Default item=StatoRele9
-            Default item=FeedBRele9 
-            Switch item=ONTht9 mappings=[1="PREMI"]
-            Switch item=OFFTht9 mappings=[1="PREMI"]
+          //  Switch item=ONTht9 mappings=[1="PREMI"]
+          //  Switch item=OFFTht9 mappings=[1="PREMI"]
         }
         Text label="Corridoio" icon="corridor"{
             Default item=Termoumidostato10T
             Default item=Termoumidostato10U
             Setpoint item=Termoumidostato10S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina10
-            Default item=StatoRele10
+            
             Default item=FeedBRele10
+            Default item=StatoRele10
             //Default item=ONTht10
             //Default item=OFFTht10
         }
@@ -122,8 +132,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato11U
             Setpoint item=Termoumidostato11S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina11
-            Default item=StatoRele11
+            
             Default item=FeedBRele11
+            Default item=StatoRele11
             //Default item=ONTht11
             //Default item=OFFTht11
         }
@@ -132,8 +143,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato12U
             Setpoint item=Termoumidostato12S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina12
-            Default item=StatoRele12
+            
             Default item=FeedBRele12
+            Default item=StatoRele12
             //Default item=ONTht12
             //Default item=OFFTht12
         }        
@@ -142,8 +154,9 @@ sitemap villa label="Benvenuto a CASA"
             Default item=Termoumidostato13U
             Setpoint item=Termoumidostato13S minValue=10 maxValue=30 step=0.5
             //Default item=AttTestina13
-            Default item=StatoRele13
+            
             Default item=FeedBRele13
+            Default item=StatoRele13
             //Default item=ONTht13
             //Default item=OFFTht13
         }   

@@ -1,15 +1,20 @@
+Bridge modbus:tcp:localhostTCP [ host="192.168.1.150", port=502, id=1 ] {
+    Bridge poller holding [ start=1, length=2, refresh=5000, type="holding" ] {
+        Thing data Taccimp [ readStart="1", readValueType="int16" ]
+    }
+}
 Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
 
     // // read-write for coils. Reading 4 coils, with index 4, and 5.
     // // These correspond to input register numbers 000005, and 000005
     Bridge poller coils [ start=32, length=38, refresh=5000, type="coil" ] {
         // Note the zero based indexing: first coil is index 0.
-        Thing data Pompari [ readStart="32", readValueType="bit"]
-        Thing data PompaPI [ readStart="33", readValueType="bit"]
-        Thing data PompaPT [ readStart="34", readValueType="bit"]
-        Thing data PompaP1 [ readStart="35", readValueType="bit"]
-        Thing data PompaTermo [ readStart="36", readValueType="bit"]
-        Thing data PompaRil [ readStart="37", readValueType="bit"]
+        Thing data PompaRi [ readStart="32", readValueType="bit"]
+        Thing data PompaPI [ readStart="34", readValueType="bit"]
+        Thing data PompaPT [ readStart="35", readValueType="bit"]
+        Thing data PompaP1 [ readStart="36", readValueType="bit"]
+        Thing data PompaTermo [ readStart="37", readValueType="bit"]
+        Thing data PompaRil [ readStart="38", readValueType="bit"]
     }
     Bridge poller coils1 [ start=73, length=74, refresh=5000, type="coil" ] {
         // Note the zero based indexing: first coil is index 0.

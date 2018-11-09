@@ -1,0 +1,42 @@
+rule "Termostato OFF Biliardo"
+    when
+        Item ProxyAttTermo9 changed from ON to OFF
+    then 
+        sendCommand(OFFTht1, 1)
+    end
+
+rule "Termostato ON Biliardo"
+    when
+        Item ProxyAttTermo9 changed from OFF to ON
+    then
+        sendCommand(ONTht1, 1)
+    end
+
+
+rule "Termostato OFF App.verde"
+    when
+        Item ProxyAttTermo9 changed from ON to OFF
+    then 
+        sendCommand(OFFTht9, 1)
+    end
+
+rule "Termostato ON App.verde"
+    when
+        Item ProxyAttTermo9 changed from OFF to ON
+    then
+        sendCommand(ONTht9, 1)
+    end
+
+// rule "Attiva/Disattiva termostato App.verde"
+//     when
+//         Item ProxyAttTermo9 changed
+//     then
+//     if(FeedBRele9.state = DISATTIVATO)
+//     {
+//        ONTht9.sendCommand(1)
+//     }
+//     if(FeedBRele9.state = ATTIVATO)
+//     {
+//        OFFTht9.sendCommand(0)
+//     }
+//     end
