@@ -1,42 +1,337 @@
-rule "Termostato OFF Biliardo"
+rule "Attiva/Disattiva termostato 1"
     when
-        Item ProxyAttTermo9 changed from ON to OFF
-    then 
-        sendCommand(OFFTht1, 1)
-    end
-
-rule "Termostato ON Biliardo"
-    when
-        Item ProxyAttTermo9 changed from OFF to ON
+        Item ProxyAttTermo1 received update ON
     then
-        sendCommand(ONTht1, 1)
-    end
+        if(FeedBRele1.state == 0) {
+            ONTht1.sendCommand(1)
+            ProxyWatingAttTermo1.postUpdate(0) 
+        }
+        else {
+            OFFTht1.sendCommand(1)
+            ProxyWatingAttTermo1.postUpdate(0)
+        }
+        end
 
-
-rule "Termostato OFF App.verde"
+rule "Attiva/Disattiva termostato 1 temp"
     when
-        Item ProxyAttTermo9 changed from ON to OFF
-    then 
-        sendCommand(OFFTht9, 1)
-    end
-
-rule "Termostato ON App.verde"
-    when
-        Item ProxyAttTermo9 changed from OFF to ON
+        Item FeedBRele1 changed 
     then
-        sendCommand(ONTht9, 1)
+        if(FeedBRele1.state == 0) {
+            ProxyWatingAttTermo1.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo1.postUpdate(4)
+        }
+        end   
+
+rule "Attiva/Disattiva termostato 2"
+    when
+        Item ProxyAttTermo2 received update ON
+    then
+        if(FeedBRele2.state == 0) {
+            ONTht2.sendCommand(1)
+            ProxyWatingAttTermo2.postUpdate(0) 
+        }
+        else {
+            OFFTht2.sendCommand(1)
+            ProxyWatingAttTermo2.postUpdate(0)
+        }
     end
 
-// rule "Attiva/Disattiva termostato App.verde"
-//     when
-//         Item ProxyAttTermo9 changed
-//     then
-//     if(FeedBRele9.state = DISATTIVATO)
-//     {
-//        ONTht9.sendCommand(1)
-//     }
-//     if(FeedBRele9.state = ATTIVATO)
-//     {
-//        OFFTht9.sendCommand(0)
-//     }
-//     end
+rule "Attiva/Disattiva termostato 2 temp"
+    when
+        Item FeedBRele2 changed 
+    then
+        if(FeedBRele2.state == 0) {
+            ProxyWatingAttTermo2.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo2.postUpdate(4)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 3"
+    when
+        Item ProxyAttTermo3 received update ON
+    then
+        if(FeedBRele3.state == 0) {
+            ONTht3.sendCommand(1)
+            ProxyWatingAttTermo3.postUpdate(0) 
+        }
+        else {
+            OFFTht3.sendCommand(1)
+            ProxyWatingAttTermo3.postUpdate(0)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 3 temp"
+    when
+        Item FeedBRele3 changed 
+    then
+        if(FeedBRele3.state == 0) {
+            ProxyWatingAttTermo3.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo3.postUpdate(4)
+        }
+    end    
+
+rule "Attiva/Disattiva termostato 4"
+    when
+        Item ProxyAttTermo4 received update ON
+    then
+        if(FeedBRele4.state == 0) {
+            ONTht4.sendCommand(1)
+            ProxyWatingAttTermo4.postUpdate(0) 
+        }
+        else {
+            OFFTht4.sendCommand(1)
+            ProxyWatingAttTermo4.postUpdate(0)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 4 temp"
+    when
+        Item FeedBRele4 changed 
+    then
+        if(FeedBRele4.state == 0) {
+            ProxyWatingAttTermo4.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo4.postUpdate(4)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 5"
+    when
+        Item ProxyAttTermo5 received update ON
+    then
+        if(FeedBRele5.state == 0) {
+            ONTht5.sendCommand(1)
+            ProxyWatingAttTermo5.postUpdate(0) 
+        }
+        else {
+            OFFTht5.sendCommand(1)
+            ProxyWatingAttTermo5.postUpdate(0)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 5 temp"
+    when
+        Item FeedBRele5 changed 
+    then
+        if(FeedBRele5.state == 0) {
+            ProxyWatingAttTermo5.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo5.postUpdate(4)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 6"
+    when
+        Item ProxyAttTermo6 received update ON
+    then
+        if(FeedBRele6.state == 0) {
+            ONTht6.sendCommand(1)
+            ProxyWatingAttTermo6.postUpdate(0) 
+        }
+        else {
+            OFFTht6.sendCommand(1)
+            ProxyWatingAttTermo6.postUpdate(0)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 6 temp"
+    when
+        Item FeedBRele6 changed 
+    then
+        if(FeedBRele6.state == 0) {
+            ProxyWatingAttTermo6.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo6.postUpdate(4)
+        }
+    end    
+
+rule "Attiva/Disattiva termostato 7"
+    when
+        Item ProxyAttTermo7 received update ON
+    then
+        if(FeedBRele7.state == 0) {
+            ONTht7.sendCommand(1)
+            ProxyWatingAttTermo7.postUpdate(0) 
+        }
+        else {
+            OFFTht7.sendCommand(1)
+            ProxyWatingAttTermo7.postUpdate(0)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 7 temp"
+    when
+        Item FeedBRele7 changed 
+    then
+        if(FeedBRele7.state == 0) {
+            ProxyWatingAttTermo7.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo7.postUpdate(4)
+        }
+    end    
+
+rule "Attiva/Disattiva termostato 8"
+    when
+        Item ProxyAttTermo8 received update ON
+    then
+        if(FeedBRele8.state == 0) {
+            ONTht8.sendCommand(1)
+            ProxyWatingAttTermo8.postUpdate(0) 
+        }
+        else {
+            OFFTht8.sendCommand(1)
+            ProxyWatingAttTermo8.postUpdate(0)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 8 temp"
+    when
+        Item FeedBRele8 changed 
+    then
+        if(FeedBRele8.state == 0) {
+            ProxyWatingAttTermo8.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo8.postUpdate(4)
+        }
+    end    
+
+rule "Attiva/Disattiva termostato 9"
+    when
+        Item ProxyAttTermo9 received update ON
+    then
+        if(FeedBRele9.state == 0) {
+            ONTht9.sendCommand(1)
+            ProxyWatingAttTermo9.postUpdate(0) 
+        }
+        else {
+            OFFTht9.sendCommand(1)
+            ProxyWatingAttTermo9.postUpdate(0)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 9 temp"
+    when
+        Item FeedBRele9 changed 
+    then
+        if(FeedBRele9.state == 0) {
+            ProxyWatingAttTermo9.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo9.postUpdate(4)
+        }
+    end
+
+rule "Attiva/Disattiva termostato 10"
+    when
+        Item ProxyAttTermo10 received update ON
+    then
+        if(FeedBRele10.state == 0) {
+            ONTht10.sendCommand(1)
+            ProxyWatingAttTermo10.postUpdate(0) 
+        }
+        else {
+            OFFTht10.sendCommand(1)
+            ProxyWatingAttTermo10.postUpdate(0)
+        }
+end
+
+rule "Attiva/Disattiva termostato 10 temp"
+    when
+        Item FeedBRele10 changed 
+    then
+        if(FeedBRele10.state == 0) {
+            ProxyWatingAttTermo10.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo10.postUpdate(4)
+        }
+end
+
+rule "Attiva/Disattiva termostato 11"
+    when
+        Item ProxyAttTermo11 received update ON
+    then
+        if(FeedBRele11.state == 0) {
+            ONTht11.sendCommand(1)
+            ProxyWatingAttTermo11.postUpdate(0) 
+        }
+        else {
+            OFFTht11.sendCommand(1)
+            ProxyWatingAttTermo11.postUpdate(0)
+        }
+end
+
+rule "Attiva/Disattiva termostato 11 temp"
+    when
+        Item FeedBRele11 changed 
+    then
+        if(FeedBRele11.state == 0) {
+            ProxyWatingAttTermo11.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo11.postUpdate(4)
+        }
+end
+
+rule "Attiva/Disattiva termostato 12"
+    when
+        Item ProxyAttTermo12 received update ON
+    then
+        if(FeedBRele12.state == 0) {
+            ONTht12.sendCommand(1)
+            ProxyWatingAttTermo12.postUpdate(0) 
+        }
+        else {
+            OFFTht12.sendCommand(1)
+            ProxyWatingAttTermo12.postUpdate(0)
+        }
+end
+
+rule "Attiva/Disattiva termostato 12 temp"
+    when
+        Item FeedBRele12 changed 
+    then
+        if(FeedBRele12.state == 0) {
+            ProxyWatingAttTermo12.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo12.postUpdate(4)
+        }
+end
+
+rule "Attiva/Disattiva termostato 13"
+    when
+        Item ProxyAttTermo13 received update ON
+    then
+        if(FeedBRele13.state == 0) {
+            ONTht13.sendCommand(1)
+            ProxyWatingAttTermo13.postUpdate(0) 
+        }
+        else {
+            OFFTht13.sendCommand(1)
+            ProxyWatingAttTermo13.postUpdate(0)
+        }
+end
+
+rule "Attiva/Disattiva termostato 13 temp"
+    when
+        Item FeedBRele13 changed 
+    then
+        if(FeedBRele13.state == 0) {
+            ProxyWatingAttTermo13.postUpdate(3)
+        }
+        else {
+           ProxyWatingAttTermo13.postUpdate(4)
+        }
+end    

@@ -6,5 +6,5 @@ everyDay     : "0 0 0 * * ?"
 
 /* Formato group*, item, * all items*/
 Items {
-gThtt*, gThtu*, gPompe*, gAvgTemperatura* : strategy =  everyMinute, everyChange, restoreOnStartup
+gThtt*, gThtu*, gPompe*, gAvgTemperatura*, gTempImp*, gSPTempImpianto : strategy =  everyMinute, everyChange, restoreOnStartup
 }
