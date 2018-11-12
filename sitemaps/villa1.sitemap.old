@@ -1,6 +1,6 @@
 sitemap villa label="Benvenuto a CASA"
 {
-  //  Frame label="Gestione riscaldamento"{
+    Frame label="Gestione riscaldamento"{
         Frame label="Stato zone" {
             Default item=AllarmeGenerale
             Switch item=StatoFZ1 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
@@ -14,7 +14,7 @@ sitemap villa label="Benvenuto a CASA"
             //Default item=AttTestina1
            // Default item=AllarmeTht1
             Switch item=ProxyAttTermo1 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo1==3]
-            Switch item=ProxyAttTermo1 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo1==4]
+            Switch item=ProxyAttTermo1 mappings=[ON="Disattiva"] valuecolor=[1="red"] visibility=[ProxyWatingAttTermo1==4]
             Text item=ProxyTempAttTermo1  visibility=[ProxyWatingAttTermo1==0]
             Default item=FeedBRele1
             Default item=StatoRele1
@@ -180,13 +180,15 @@ sitemap villa label="Benvenuto a CASA"
             //Default item=OFFTht13
         }   
    
-    //}
-    Frame label="SetPoint Acqua Sanitario" {
+    }
+    Frame label="SetPoint Acqua Sanitario"
+    {
         Setpoint item=Set_temp_standard_condition_ACS minValue=10 maxValue=90 step=1
         Default item=TempContrACS
     }
 
-    Frame label="Stato Pompe" {
-		Group item=gPompe label="Stato pompe" icon=pump 
+    Frame label="Stato Pompe" 
+	{
+		Group item=gPompe label="Stato pompe" valuecolor=[1="red", 0="green"] icon=pump 
 	}	
 }

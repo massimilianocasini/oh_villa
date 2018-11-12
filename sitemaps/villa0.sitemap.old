@@ -1,27 +1,27 @@
 sitemap villa label="Benvenuto a CASA"
 {
-  //  Frame label="Gestione riscaldamento"{
-        Frame label="Stato zone" {
-            Default item=AllarmeGenerale
-            Switch item=StatoFZ1 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
-            Switch item=StatoFZ2 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
-            Switch item=StatoFZ3 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
-        }
-        Frame label="Biliardo" icon="party"{
+    Frame label="Gestione riscaldamento"{
+        Default item=AllarmeGenerale
+        Default item=gAvgTemperatura
+        Switch item=StatoFZ1 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+        Switch item=StatoFZ2 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+        Switch item=StatoFZ3 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+     
+        Text label="Biliardo" icon="party"{
             Default item=Termoumidostato1T
             Default item=Termoumidostato1U
             Setpoint item=Termoumidostato1S minValue=10 maxValue=30 step=1
             //Default item=AttTestina1
            // Default item=AllarmeTht1
             Switch item=ProxyAttTermo1 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo1==3]
-            Switch item=ProxyAttTermo1 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo1==4]
+            Switch item=ProxyAttTermo1 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo1==4]
             Text item=ProxyTempAttTermo1  visibility=[ProxyWatingAttTermo1==0]
             Default item=FeedBRele1
             Default item=StatoRele1
           // Switch item=ONTht1 mappings=[1="PREMI"]
           // Switch item=OFFTht1 mappings=[1="PREMI"]
         }
-        Frame label="Antibagno Piano Interrato" icon="toilet"{
+        Text label="Antibagno Piano Interrato" icon="toilet"{
             Default item=Termoumidostato2T
             Default item=Termoumidostato2U
             Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=1
@@ -36,7 +36,7 @@ sitemap villa label="Benvenuto a CASA"
             //Default item=OFFTht2
             
         }
-        Frame label="Appartamento arancione" icon="bedroom_orange"{
+        Text label="Appartamento arancione" icon="bedroom_orange"{
             Default item=Termoumidostato3T
             Default item=Termoumidostato3U
             Setpoint item=Termoumidostato3S minValue=10 maxValue=30 step=1
@@ -49,7 +49,7 @@ sitemap villa label="Benvenuto a CASA"
             //Default item=ONTht3
             //Default item=OFFTht3
         }
-        Frame label="AngoloTV" icon="screen"{
+        Text label="AngoloTV" icon="screen"{
             Default item=Termoumidostato4T
             Default item=Termoumidostato4U
             Setpoint item=Termoumidostato4S minValue=10 maxValue=30 step=1
@@ -62,7 +62,7 @@ sitemap villa label="Benvenuto a CASA"
            // Default item=ONTht4
             //Default item=OFFTht4
         }
-        Frame label="Antibagno Piano Terra" icon="toilet"{
+        Text label="Antibagno Piano Terra" icon="toilet"{
             Default item=Termoumidostato5T
             Default item=Termoumidostato5U
             Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=1
@@ -75,7 +75,7 @@ sitemap villa label="Benvenuto a CASA"
            // Default item=ONTht5
             //Default item=OFFTht5
         }
-        Frame label="Salone" icon="terrace"{
+         Text label="Salone" icon="terrace"{
             Default item=Termoumidostato6T
             Default item=Termoumidostato6U
             Setpoint item=Termoumidostato6S minValue=10 maxValue=30 step=1
@@ -88,7 +88,7 @@ sitemap villa label="Benvenuto a CASA"
           //  Default item=ONTht6
             //Default item=OFFTht6
         }
-        Frame label="Cucina" icon="kitchen"{
+        Text label="Cucina" icon="kitchen"{
             Default item=Termoumidostato7T
             Default item=Termoumidostato7U
             Setpoint item=Termoumidostato7S minValue=10 maxValue=30 step=1
@@ -101,7 +101,7 @@ sitemap villa label="Benvenuto a CASA"
            // Default item=ONTht7
             //Default item=OFFTht7
         }
-        Frame label="Appartamento rosso" icon="bedroom_red"{
+        Text label="Appartamento rosso" icon="bedroom_red"{
             Default item=Termoumidostato8T
             Default item=Termoumidostato8U
             Setpoint item=Termoumidostato8S minValue=10 maxValue=30 step=1
@@ -114,7 +114,7 @@ sitemap villa label="Benvenuto a CASA"
            // Default item=ONTht8
             //Default item=OFFTht8
         }
-        Frame label="Appartamento verde" icon="bedroom_blue"{
+        Text label="Appartamento verde" icon="bedroom_blue"{
             Default item=Termoumidostato9T
             Default item=Termoumidostato9U
             Setpoint item=Termoumidostato9S minValue=10 maxValue=30 step=1
@@ -124,10 +124,10 @@ sitemap villa label="Benvenuto a CASA"
             Text item=ProxyTempAttTermo9  visibility=[ProxyWatingAttTermo9==0]
             Default item=FeedBRele9
             Default item=StatoRele9
-          //  Switch item=ONTht9 mappings=[1="PREMI"]
-          //  Switch item=OFFTht9 mappings=[1="PREMI"]
+            Switch item=ONTht9 mappings=[1="PREMI"]
+            Switch item=OFFTht9 mappings=[1="PREMI"]
         }
-        Frame label="Corridoio" icon="corridor"{
+        Text label="Corridoio" icon="corridor"{
             Default item=Termoumidostato10T
             Default item=Termoumidostato10U
             Setpoint item=Termoumidostato10S minValue=10 maxValue=30 step=1
@@ -140,20 +140,20 @@ sitemap villa label="Benvenuto a CASA"
             //Default item=ONTht10
             //Default item=OFFTht10
         }
-        Frame label="Arianna" icon="girl_1"{
+        Text label="Arianna" icon="girl_1"{
             Default item=Termoumidostato11T
             Default item=Termoumidostato11U
             Setpoint item=Termoumidostato11S minValue=10 maxValue=30 step=1
             //Default item=AttTestina11
             Switch item=ProxyAttTermo11 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo11==3]
             Switch item=ProxyAttTermo11 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo11==4]
-            Text item=ProxyTempAttTermo11  visibility=[ProxyWatingAttTermo11==0]
+            Text item=ProxyTempAttTermo1  visibility=[ProxyWatingAttTermo11==0]
             Default item=FeedBRele11
             Default item=StatoRele11
             //Default item=ONTht11
             //Default item=OFFTht11
         }
-        Frame label="Giolo" icon="parents_1_1"{
+        Text label="Giolo" icon="parents_1_1"{
             Default item=Termoumidostato12T
             Default item=Termoumidostato12U
             Setpoint item=Termoumidostato12S minValue=10 maxValue=30 step=1
@@ -166,7 +166,7 @@ sitemap villa label="Benvenuto a CASA"
             //Default item=ONTht12
             //Default item=OFFTht12
         }        
-        Frame label="Eleonora" icon="girl_2"{
+        Text label="Eleonora" icon="girl_2"{
             Default item=Termoumidostato13T
             Default item=Termoumidostato13U
             Setpoint item=Termoumidostato13S minValue=10 maxValue=30 step=1
@@ -180,13 +180,43 @@ sitemap villa label="Benvenuto a CASA"
             //Default item=OFFTht13
         }   
    
-    //}
-    Frame label="SetPoint Acqua Sanitario" {
-        Setpoint item=Set_temp_standard_condition_ACS minValue=10 maxValue=90 step=1
-        Default item=TempContrACS
     }
-
-    Frame label="Stato Pompe" {
-		Group item=gPompe label="Stato pompe" icon=pump 
+    Frame label="Gruppi riscaldamento"
+	{
+		
+		Group item=gThtt label="Temperature riscaldamento" icon=temperature
+        Group item=gThtu label="Umidità" icon=humidity
+        
+          Text label="SetPoint Temperature riscaldamento" icon=heating {
+            Setpoint item=Termoumidostato1S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato3S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato4S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato6S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato7S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato8S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato9S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato10S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato11S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato12S minValue=10 maxValue=30 step=1
+            Setpoint item=Termoumidostato13S minValue=10 maxValue=30 step=1  
+        }
 	}	
+    Frame label="Stato Pompe" 
+	{
+		Group item=gPompe label="Stato pompe" valuecolor=[ACCESA="red", SPENTA="green"] icon=pump 
+	}	
+    Frame label="Stato impianto"
+	{
+		Group item=gTempImp label="Stato Temperature"  icon=temperature
+        Setpoint item=Set_temp_standard_condition_chiller minValue=10 maxValue=90 step=1
+        Setpoint item=Set_temp_standard_condition_heatPump minValue=10 maxValue=90 step=1
+        Setpoint item=Set_temp_standard_condition_ACS minValue=10 maxValue=90 step=1
+        Setpoint item=Set_temp_energySave_condition_chiller minValue=10 maxValue=90 step=1
+        Setpoint item=Set_temp_energySave_condition_heatPump minValue=10 maxValue=90 step=1
+        Setpoint item=Set_temp_energySave_condition_ACS minValue=10 maxValue=90 step=1
+	}	
+    
+
 }
