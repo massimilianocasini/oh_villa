@@ -1,0 +1,192 @@
+sitemap villa label="Benvenuto a CASA"
+{
+  //  Frame label="Gestione riscaldamento"{
+        Frame label="Stato zone" {
+            Default item=AllarmeGenerale
+            Switch item=StatoFZ1 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+            Switch item=StatoFZ2 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+            Switch item=StatoFZ3 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+        }
+        Frame label="Biliardo" icon="party"{
+            Default item=Termoumidostato1T
+            Default item=Termoumidostato1U
+            Setpoint item=Termoumidostato1S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina1
+           // Default item=AllarmeTht1
+            Switch item=ProxyAttTermo1 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo1==3]
+            Switch item=ProxyAttTermo1 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo1==4]
+            Text item=ProxyTempAttTermo1  visibility=[ProxyWatingAttTermo1==0]
+            Default item=FeedBRele1
+            Default item=StatoRele1
+          // Switch item=ONTht1 mappings=[1="PREMI"]
+          // Switch item=OFFTht1 mappings=[1="PREMI"]
+        }
+        Frame label="Antibagno Piano Interrato" icon="toilet"{
+            Default item=Termoumidostato2T
+            Default item=Termoumidostato2U
+            Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina2
+            //Default item=AllarmeTht2
+            Switch item=ProxyAttTermo2 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo2==3]
+            Switch item=ProxyAttTermo2 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo2==4]
+            Text item=ProxyTempAttTermo2  visibility=[ProxyWatingAttTermo2==0]
+            Default item=FeedBRele2
+            Default item=StatoRele2
+            //Default item=ONTht2
+            //Default item=OFFTht2
+            
+        }
+        Frame label="Appartamento arancione" icon="bedroom_orange"{
+            Default item=Termoumidostato3T
+            Default item=Termoumidostato3U
+            Setpoint item=Termoumidostato3S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina3
+            Switch item=ProxyAttTermo3 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo3==3]
+            Switch item=ProxyAttTermo3 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo3==4]
+            Text item=ProxyTempAttTermo3  visibility=[ProxyWatingAttTermo3==0]            
+            Default item=FeedBRele3
+            Default item=StatoRele3
+            //Default item=ONTht3
+            //Default item=OFFTht3
+        }
+        Frame label="AngoloTV" icon="screen"{
+            Default item=Termoumidostato4T
+            Default item=Termoumidostato4U
+            Setpoint item=Termoumidostato4S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina4
+            Switch item=ProxyAttTermo4 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo4==3]
+            Switch item=ProxyAttTermo4 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo4==4]
+            Text item=ProxyTempAttTermo4  visibility=[ProxyWatingAttTermo4==0]
+            Default item=FeedBRele4
+            Default item=StatoRele4
+           // Default item=ONTht4
+            //Default item=OFFTht4
+        }
+        Frame label="Antibagno Piano Terra" icon="toilet"{
+            Default item=Termoumidostato5T
+            Default item=Termoumidostato5U
+            Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina5
+            Switch item=ProxyAttTermo5 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo5==3]
+            Switch item=ProxyAttTermo5 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo5==4]
+            Text item=ProxyTempAttTermo5  visibility=[ProxyWatingAttTermo5==0]
+            Default item=FeedBRele5
+            Default item=StatoRele5
+           // Default item=ONTht5
+            //Default item=OFFTht5
+        }
+        Frame label="Salone" icon="terrace"{
+            Default item=Termoumidostato6T
+            Default item=Termoumidostato6U
+            Setpoint item=Termoumidostato6S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina6
+            Switch item=ProxyAttTermo6 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo6==3]
+            Switch item=ProxyAttTermo6 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo6==4]
+            Text item=ProxyTempAttTermo6  visibility=[ProxyWatingAttTermo6==0]
+            Default item=FeedBRele6
+            Default item=StatoRele6
+          //  Default item=ONTht6
+            //Default item=OFFTht6
+        }
+        Frame label="Cucina" icon="kitchen"{
+            Default item=Termoumidostato7T
+            Default item=Termoumidostato7U
+            Setpoint item=Termoumidostato7S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina7
+            Switch item=ProxyAttTermo7 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo7==3]
+            Switch item=ProxyAttTermo7 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo7==4]
+            Text item=ProxyTempAttTermo7  visibility=[ProxyWatingAttTermo7==0]
+            Default item=FeedBRele7
+            Default item=StatoRele7
+           // Default item=ONTht7
+            //Default item=OFFTht7
+        }
+        Frame label="Appartamento rosso" icon="bedroom_red"{
+            Default item=Termoumidostato8T
+            Default item=Termoumidostato8U
+            Setpoint item=Termoumidostato8S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina8     
+            Switch item=ProxyAttTermo8 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo8==3]
+            Switch item=ProxyAttTermo8 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo8==4]
+            Text item=ProxyTempAttTermo8  visibility=[ProxyWatingAttTermo8==0]
+            Default item=FeedBRele8
+            Default item=StatoRele8
+           // Default item=ONTht8
+            //Default item=OFFTht8
+        }
+        Frame label="Appartamento verde" icon="bedroom_blue"{
+            Default item=Termoumidostato9T
+            Default item=Termoumidostato9U
+            Setpoint item=Termoumidostato9S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina9
+            Switch item=ProxyAttTermo9 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo9==3]
+            Switch item=ProxyAttTermo9 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo9==4]
+            Text item=ProxyTempAttTermo9  visibility=[ProxyWatingAttTermo9==0]
+            Default item=FeedBRele9
+            Default item=StatoRele9
+          //  Switch item=ONTht9 mappings=[1="PREMI"]
+          //  Switch item=OFFTht9 mappings=[1="PREMI"]
+        }
+        Frame label="Corridoio" icon="corridor"{
+            Default item=Termoumidostato10T
+            Default item=Termoumidostato10U
+            Setpoint item=Termoumidostato10S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina10
+            Switch item=ProxyAttTermo10 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo10==3]
+            Switch item=ProxyAttTermo10 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo10==4]
+            Text item=ProxyTempAttTermo10  visibility=[ProxyWatingAttTermo10==0]
+            Default item=FeedBRele10
+            Default item=StatoRele10
+            //Default item=ONTht10
+            //Default item=OFFTht10
+        }
+        Frame label="Arianna" icon="girl_1"{
+            Default item=Termoumidostato11T
+            Default item=Termoumidostato11U
+            Setpoint item=Termoumidostato11S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina11
+            Switch item=ProxyAttTermo11 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo11==3]
+            Switch item=ProxyAttTermo11 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo11==4]
+            Text item=ProxyTempAttTermo11  visibility=[ProxyWatingAttTermo11==0]
+            Default item=FeedBRele11
+            Default item=StatoRele11
+            //Default item=ONTht11
+            //Default item=OFFTht11
+        }
+        Frame label="Giolo" icon="parents_1_1"{
+            Default item=Termoumidostato12T
+            Default item=Termoumidostato12U
+            Setpoint item=Termoumidostato12S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina12
+            Switch item=ProxyAttTermo12 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo12==3]
+            Switch item=ProxyAttTermo12 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo12==4]
+            Text item=ProxyTempAttTermo12  visibility=[ProxyWatingAttTermo12==0]
+            Default item=FeedBRele12
+            Default item=StatoRele12
+            //Default item=ONTht12
+            //Default item=OFFTht12
+        }        
+        Frame label="Eleonora" icon="girl_2"{
+            Default item=Termoumidostato13T
+            Default item=Termoumidostato13U
+            Setpoint item=Termoumidostato13S minValue=10 maxValue=30 step=1
+            //Default item=AttTestina13
+            Switch item=ProxyAttTermo13 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo13==3]
+            Switch item=ProxyAttTermo13 mappings=[ON="Disattiva"] visibility=[ProxyWatingAttTermo13==4]
+            Text item=ProxyTempAttTermo13  visibility=[ProxyWatingAttTermo13==0]
+            Default item=FeedBRele13
+            Default item=StatoRele13
+            //Default item=ONTht13
+            //Default item=OFFTht13
+        }   
+   
+    //}
+    Frame label="SetPoint Acqua Sanitario" {
+        Setpoint item=Set_temp_standard_condition_ACS minValue=10 maxValue=90 step=1
+        Default item=TempContrACS
+    }
+
+    Frame label="Stato Pompe" {
+		Group item=gPompe label="Stato pompe" icon=pump 
+	}	
+}

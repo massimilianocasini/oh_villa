@@ -53,9 +53,9 @@ Number PompaTermosifoni "Pompa Termosifoni [MAP(pomp.map):%s]"  <pump>  (gPompe)
 Number PompaRilancio    "Pompa rilancio tra accumulo e collettore [MAP(pomp.map):%s]"  <pump> (gPompe)  { channel="modbus:data:localhostTCP:coils:PompaRil:number" }
 Number AllarmeGenerale  "Allarme generale [MAP(alarm.map):%s]"  <alarm>   { channel="modbus:data:localhostTCP:coils1:AllarmeGen:number" }
 
-Number StatoFZ1 "PI"  { channel="modbus:data:localhostTCP:holding20:Sfz1:number" }
-Number StatoFZ2 "PT"  { channel="modbus:data:localhostTCP:holding21:Sfz2:number" }
-Number StatoFZ3 "P1"  { channel="modbus:data:localhostTCP:holding22:Sfz3:number" }
+Number StatoFZ1 "PI [MAP(zone.map):%s]"  { channel="modbus:data:localhostTCP:holding20:Sfz1:number" }
+Number StatoFZ2 "PT [MAP(zone.map):%s]"  { channel="modbus:data:localhostTCP:holding21:Sfz2:number" }
+Number StatoFZ3 "P1 [MAP(zone.map):%s]"  { channel="modbus:data:localhostTCP:holding22:Sfz3:number" }
 
 Number Termoumidostato1T    "T.Biliardo PI  [%.1f °C]"  <temperature> (gAll, gPI, gBiliardo, gTht, gThtt, gPIt, gAvgTemperatura, gAvgTempPI)    { channel="modbus:data:localhostTCP:holding:Tht1t:number" }
 Number Termoumidostato1U    "U.Biliardo PI [%.1f %%]" <humidity> (gAll, gPI, gBiliardo, gTht, gThtu)  { channel="modbus:data:localhostTCP:holding:Tht1u:number" }
@@ -69,6 +69,7 @@ Number OFFTht1              "Trmst OFF Biliardo" <settings>   { channel="modbus:
 Switch ProxyAttTermo1       "Att./Dis. Trmst Biliardo" <settings>
 Number ProxyWatingAttTermo1
 String ProxyTempAttTermo1   "Attendi ...."  
+String Riepilogo1  
 
 Number Termoumidostato2T    "T.Antibagno PI [%.1f °C]"  <temperature> (gAll, gPT, gAntibagnoPI, gTht, gThtt, gAvgTemperatura, gAvgTempPI) { channel="modbus:data:localhostTCP:holding:Tht2t:number" }
 Number Termoumidostato2U    "U.Antibagno PI [%.1f %%]"    <humidity> (gAll, gPT, gAntibagnoPI, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding:Tht2u:number" }
@@ -81,7 +82,8 @@ Number ONTht2               "Trmst ON Antibagno PI" <settings>   { channel="modb
 Number OFFTht2              "Trmst OFF Antibagno PI" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht2:number" }
 Switch ProxyAttTermo2       "Att./Dis. Trmst Antibagbo PI" <settings>
 Number ProxyWatingAttTermo2
-String ProxyTempAttTermo2   "Attendi ...." 
+String ProxyTempAttTermo2   "Attendi ...."
+String Riepilogo2 
 
 Number Termoumidostato3T    "T.App.arancione PT [%.1f °C]"  <temperature> (gAll, gPT, gAntibagnoPI, gTht, gThtt, gAvgTemperatura, gAvgTempPT)   { channel="modbus:data:localhostTCP:holding:Tht3t:number" }
 Number Termoumidostato3U    "U.App.arancione PT [%.1f %%]"    <humidity> (gAll, gPT, gAntibagnoPI, gTht, gThtu)   { channel="modbus:data:localhostTCP:holding:Tht3u:number" }
@@ -93,7 +95,8 @@ Number ONTht3               "Trmst ON App.arancione" <settings>   { channel="mod
 Number OFFTht3              "Trmst OFF App.arancione" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht3:number" }
 Switch ProxyAttTermo3       "Att./Dis. Trmst App.Arancione" <settings>
 Number ProxyWatingAttTermo3
-String ProxyTempAttTermo3   "Attendi ...." 
+String ProxyTempAttTermo3   "Attendi ...."
+String Riepilogo3 
 
 Number Termoumidostato4T    "T.AngoloTV [%.1f °C]"  <temperature> (gAll, gPT, gAngoloTV, gTht, gThtt, gAvgTemperatura, gAvgTempPT)   { channel="modbus:data:localhostTCP:holding1:Tht4t:number" }
 Number Termoumidostato4U    "U.AngoloTV [%.1f %%]"    <humidity> (gAll, gPT, gAngoloTV, gTht, gThtu)   { channel="modbus:data:localhostTCP:holding1:Tht4u:number" }
@@ -106,7 +109,7 @@ Number OFFTht4              "Trmst OFF AngoloTV" <settings>   { channel="modbus:
 Switch ProxyAttTermo4       "Att./Dis. Trmst AngoloTV" <settings>
 Number ProxyWatingAttTermo4
 String ProxyTempAttTermo4   "Attendi ...." 
-
+String Riepilogo4
 
 Number Termoumidostato5T    "T.Antibagno PT [%.1f °C]"   <temperature> (gAll, gPT, gAntibagnoPT, gTht, gThtt, gAvgTemperatura, gAvgTempPT)   { channel="modbus:data:localhostTCP:holding1:Tht5t:number" }
 Number Termoumidostato5U    "U.Antibagno PT [%.1f %%]" <humidity> (gAll, gPT, gAntibagnoPT, gTht, gThtu)   { channel="modbus:data:localhostTCP:holding1:Tht5u:number" }
@@ -118,7 +121,8 @@ Number ONTht5               "Trmst ON Antibagno PT" <settings>   { channel="modb
 Number OFFTht5              "Trmst OFF Antibagno PT" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht5:number" }
 Switch ProxyAttTermo5       "Att./Dis. Trmst Antibagno PT" <settings>
 Number ProxyWatingAttTermo5
-String ProxyTempAttTermo5   "Attendi ...." 
+String ProxyTempAttTermo5   "Attendi ...."
+String Riepilogo5 
 
 Number Termoumidostato6T    "T.Salone  [%.1f °C]"   <temperature> (gAll, gPT, gSalone, gTht, gThtt, gAvgTemperatura, gAvgTempPT)    { channel="modbus:data:localhostTCP:holding1:Tht6t:number" }
 Number Termoumidostato6U    "U.Salone [%.1f %%]"  <humidity> (gAll, gPT, gSalone, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding1:Tht6u:number" }
@@ -130,7 +134,8 @@ Number ONTht6               "Trmst ON Salone" <settings>   { channel="modbus:dat
 Number OFFTht6              "Trmst OFF Salone" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht6:number" }
 Switch ProxyAttTermo6       "Att./Dis. Trmst Salone" <settings>
 Number ProxyWatingAttTermo6
-String ProxyTempAttTermo6   "Attendi ...." 
+String ProxyTempAttTermo6   "Attendi ...."
+String Riepilogo6 
 
 Number Termoumidostato7T    "T.Cucina [%.1f °C]"    <temperature> (gAll, gPT, gCucina, gTht, gThtt, gAvgTemperatura, gAvgTempPT)    { channel="modbus:data:localhostTCP:holding2:Tht7t:number" }
 Number Termoumidostato7U    "U.Cucina [%.1f %%]" <humidity> (gAll, gPT, gCucina, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding2:Tht7u:number" }
@@ -142,7 +147,8 @@ Number ONTht7               "Trmst ON Cucina" <settings>   { channel="modbus:dat
 Number OFFTht7              "Trmst OFF Cucina " <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht7:number" }
 Switch ProxyAttTermo7       "Att./Dis. Trmst Cucina" <settings>
 Number ProxyWatingAttTermo7
-String ProxyTempAttTermo7   "Attendi ...." 
+String ProxyTempAttTermo7   "Attendi ...."
+String Riepilogo7 
 
 Number Termoumidostato8T    "T.App.rosso [%.1f °C]" <temperature> (gAll, gPT, gAppRosso, gTht, gThtt, gAvgTemperatura)    { channel="modbus:data:localhostTCP:holding2:Tht8t:number" }
 Number Termoumidostato8U    "U.App.rosso [%.1f %%]"   <humidity> (gAll, gPT, gAppRosso, gTht, gThtu)  { channel="modbus:data:localhostTCP:holding2:Tht8u:number" }
@@ -154,7 +160,8 @@ Number ONTht8               "Trmst ON App.rosso" <settings>   { channel="modbus:
 Number OFFTht8              "Trmst OFF App.rosso" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht8:number" }
 Switch ProxyAttTermo8       "Att./Dis. Trmst App.rosso" <settings>
 Number ProxyWatingAttTermo8
-String ProxyTempAttTermo8   "Attendi ...." 
+String ProxyTempAttTermo8   "Attendi ...."
+String Riepilogo8 
 
 Number Termoumidostato9T    "T.App.verde [%.1f °C]" <temperature> (gAll, gPT, gAppVerde, gTht, gThtt, gAvgTemperatura)  { channel="modbus:data:localhostTCP:holding2:Tht9t:number" }
 Number Termoumidostato9U    "U.App.verde [%.1f %%]"   <humidity> (gAll, gPT, gAppVerde, gTht, gThtu)  { channel="modbus:data:localhostTCP:holding2:Tht9u:number" }
@@ -166,7 +173,8 @@ Number ONTht9               "Trmst ON App.verde" <settings>  { channel="modbus:d
 Number OFFTht9              "Trmst OFF App.verde" <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht9:number" }
 Switch ProxyAttTermo9       "Att./Dis. Trmst App.verde" <settings>
 Number ProxyWatingAttTermo9
-String ProxyTempAttTermo9   "Attendi ...." 
+String ProxyTempAttTermo9   "Attendi ...."
+String Riepilogo9 
 
 Number Termoumidostato10T    "T.Corr. [%.1f °C]"    <temperature> (gAll, gPT, gCorridoio, gTht, gThtt, gAvgTemperatura, gAvgTempP1) { channel="modbus:data:localhostTCP:holding3:Tht10t:number" }
 Number Termoumidostato10U    "U.Corr. [%.1f %%]"  <humidity> (gAll, gPT, gCorridoio, gTht, gThtu) { channel="modbus:data:localhostTCP:holding3:Tht10u:number" }
@@ -178,7 +186,8 @@ Number ONTht10               "Trmst ON Corr." <settings>   { channel="modbus:dat
 Number OFFTht10              "Trmst OFF Corr." <settings>   { channel="modbus:data:localhostTCP:coils2:OffTht10:number" }
 Switch ProxyAttTermo10       "Att./Dis. Trmst Corr." <settings>
 Number ProxyWatingAttTermo10
-String ProxyTempAttTermo10   "Attendi ...." 
+String ProxyTempAttTermo10   "Attendi ...."
+String Riepilogo10 
 
 Number Termoumidostato11T    "T.Arianna [%.1f °C]"  <temperature> (gAll, gPT, gArianna, gTht, gThtt, gAvgTemperatura, gAvgTempP1)  { channel="modbus:data:localhostTCP:holding3:Tht11t:number" }
 Number Termoumidostato11U    "U.Arianna [%.1f %%]"    <humidity> (gAll, gPT, gArianna, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding3:Tht11u:number" }
@@ -190,7 +199,8 @@ Number ONTht11               "Trmst ON Arianna" <settings>   { channel="modbus:d
 Number OFFTht11              "Trmst OFF Arianna" <settings>  { channel="modbus:data:localhostTCP:coils2:OffTht11:number" }
 Switch ProxyAttTermo11       "Att./Dis. Trmst Arianna" <settings>
 Number ProxyWatingAttTermo11
-String ProxyTempAttTermo11   "Attendi ...." 
+String ProxyTempAttTermo11   "Attendi ...."
+String Riepilogo11 
 
 Number Termoumidostato12T    "T.Giolo [%.1f °C]"    <temperature> (gAll, gPT, gGiolo, gTht, gThtt, gAvgTemperatura, gAvgTempP1)  { channel="modbus:data:localhostTCP:holding3:Tht12t:number" }
 Number Termoumidostato12U    "U.Giolo [%.1f %%]"  <humidity> (gAll, gPT, gGiolo, gTht, gThtu)    { channel="modbus:data:localhostTCP:holding3:Tht12u:number" }
@@ -202,7 +212,8 @@ Number ONTht12               "Trmst ON Giolo" <settings>   { channel="modbus:dat
 Number OFFTht12              "Trmst OFF Giolo" <settings>  { channel="modbus:data:localhostTCP:coils2:OffTht12:number" }
 Switch ProxyAttTermo12       "Att./Dis. Trmst Giolo" <settings>
 Number ProxyWatingAttTermo12
-String ProxyTempAttTermo12   "Attendi ...." 
+String ProxyTempAttTermo12   "Attendi ...."
+String Riepilogo12 
 
 Number Termoumidostato13T    "T.Eleonora [%.1f °C]" <temperature> (gAll, gPT, gEleonora, gTht, gThtt, gAvgTemperatura)    { channel="modbus:data:localhostTCP:holding3:Tht13t:number" }
 Number Termoumidostato13U    "U.Eleonora [%.1f %%]"   <humidity> (gAll, gPT, gEleonora, gTht, gThtu)  { channel="modbus:data:localhostTCP:holding3:Tht13u:number" }
@@ -214,4 +225,5 @@ Number ONTht13               "Trmst ON Eleonora" <settings>   { channel="modbus:
 Number OFFTht13              "Trmst OFF Eleonora" <settings>  { channel="modbus:data:localhostTCP:coils2:OffTht13:number" }
 Switch ProxyAttTermo13       "Att./Dis. Trmst Eleonora" <settings>
 Number ProxyWatingAttTermo13
-String ProxyTempAttTermo13   "Attendi ...." 
+String ProxyTempAttTermo13   "Attendi ...."
+String Riepilogo13 
