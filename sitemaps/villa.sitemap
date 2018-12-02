@@ -20,7 +20,7 @@ sitemap villa label="Benvenuto a CASA"
                 Default item=FeedBRele1 //Stato Termostato ATTIVATO /DISATTIVATO
                 Default item=StatoRele1 //Rele termostato SPENTO / ACCESO
             }
-            Text item=Riepilogo2 label="Antibagno P.I. Z1 [%s]" icon=settings {
+            Text item=Riepilogo2 label="AntiBagno P.I. Z1 [%s]" icon=settings  {
                 Default item=Termoumidostato2T
                 Default item=Termoumidostato2U
                 Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=1 //Set temperatura
@@ -50,7 +50,7 @@ sitemap villa label="Benvenuto a CASA"
                 Default item=FeedBRele4 //Stato Termostato ATTIVATO /DISATTIVATO
                 Default item=StatoRele4 //Rele termostato SPENTO / ACCESO
             }
-            Text item=Riepilogo5 label="Ant.Bagno PT Z2 [%s]" icon=settings {
+            Text item=Riepilogo5 label="AntiBagno PT Z2 [%s]" icon=settings {
                 Default item=Termoumidostato5T
                 Default item=Termoumidostato5U
                 Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=1 //Set temperatura

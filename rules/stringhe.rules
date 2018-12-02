@@ -3,7 +3,7 @@ rule "Tutto su una riga 1"
               Item Termoumidostato1T changed or
               Item StatoRele1 changed or
               Item FeedBRele1 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato1T.state
                val statorele = StatoRele1.state
@@ -17,7 +17,7 @@ rule "Tutto su una riga 2"
               Item Termoumidostato2T changed or
               Item StatoRele2 changed or
               Item FeedBRele2 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato2T.state
                val statorele = StatoRele2.state
@@ -31,7 +31,7 @@ rule "Tutto su una riga 3"
               Item Termoumidostato3T changed or
               Item StatoRele3 changed or
               Item FeedBRele3 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato3T.state
                val statorele = StatoRele3.state
@@ -45,7 +45,7 @@ rule "Tutto su una riga 4"
               Item Termoumidostato4T changed or
               Item StatoRele4 changed or
               Item FeedBRele4 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato4T.state
                val statorele = StatoRele4.state
@@ -59,7 +59,7 @@ rule "Tutto su una riga 5"
               Item Termoumidostato5T changed or
               Item StatoRele5 changed or
               Item FeedBRele5 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato5T.state
                val statorele = StatoRele5.state
@@ -73,7 +73,7 @@ rule "Tutto su una riga 6"
               Item Termoumidostato6T changed or
               Item StatoRele6 changed or
               Item FeedBRele6 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato6T.state
                val statorele = StatoRele6.state
@@ -87,7 +87,7 @@ rule "Tutto su una riga 7"
               Item Termoumidostato7T changed or
               Item StatoRele7 changed or
               Item FeedBRele7 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato7T.state
                val statorele = StatoRele7.state
@@ -101,7 +101,7 @@ rule "Tutto su una riga 8"
               Item Termoumidostato8T changed or
               Item StatoRele8 changed or
               Item FeedBRele8 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato8T.state
                val statorele = StatoRele8.state
@@ -115,7 +115,7 @@ rule "Tutto su una riga 9"
               Item Termoumidostato9T changed or
               Item StatoRele9 changed or
               Item FeedBRele9 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato9T.state
                val statorele = StatoRele9.state
@@ -129,7 +129,7 @@ rule "Tutto su una riga 10"
               Item Termoumidostato10T changed or
               Item StatoRele10 changed or
               Item FeedBRele10 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato10T.state
                val statorele = StatoRele10.state
@@ -143,7 +143,7 @@ rule "Tutto su una riga 11"
               Item Termoumidostato11T changed or
               Item StatoRele11 changed or
               Item FeedBRele11 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato11T.state
                val statorele = StatoRele11.state
@@ -157,7 +157,7 @@ rule "Tutto su una riga 12"
               Item Termoumidostato12T changed or
               Item StatoRele12 changed or
               Item FeedBRele12 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato12T.state
                val statorele = StatoRele12.state
@@ -171,7 +171,7 @@ rule "Tutto su una riga 13"
               Item Termoumidostato13T changed or
               Item StatoRele13 changed or
               Item FeedBRele13 changed or
-              Time cron "0 0/10 * 1/1 * ? *" //ogni 10 minuti
+              Time cron "0 0/1 * 1/1 * ? *" //ogni 1 minuti
         then
                val temperatura = Termoumidostato13T.state
                val statorele = StatoRele13.state
