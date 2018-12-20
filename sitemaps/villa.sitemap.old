@@ -3,9 +3,9 @@ sitemap villa label="Benvenuto a CASA"
   //  Frame label="Gestione riscaldamento"{
         Frame label="Stato zone" {
             Default item=AllarmeGenerale
-            Selection item=StatoFZ1 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
-            Selection item=StatoFZ2 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
-            Selection item=StatoFZ3 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+            Switch item=StatoFZ1 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+            Switch item=StatoFZ2 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+            Switch item=StatoFZ3 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
         }
 
         Frame label="Stato Ambienti" icon="party"{
@@ -14,7 +14,6 @@ sitemap villa label="Benvenuto a CASA"
                 Default item=Termoumidostato1T
                 Default item=Termoumidostato1U
                 Setpoint item=Termoumidostato1S minValue=10 maxValue=30 step=1 //Set temperatura
-                //Slider item=Termoumidostato1S sendFrequency=4000
                 Switch item=ProxyAttTermo1 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo1==3]
                 Switch item=ProxyAttTermo1 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo1==4]
                 Text item=ProxyTempAttTermo1  visibility=[ProxyWatingAttTermo1==0]

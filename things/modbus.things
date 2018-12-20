@@ -2,7 +2,7 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
 
     // // read-write for coils. Reading 4 coils, with index 4, and 5.
     // // These correspond to input register numbers 000005, and 000005
-    Bridge poller coils [ start=32, length=38, refresh=5000, type="coil" ] {
+    Bridge poller coils [ start=32, length=38, refresh=4000, type="coil" ] {
         // Note the zero based indexing: first coil is index 0.
         Thing data PompaRi [ readStart="32", readValueType="bit"]
         Thing data PompaPI [ readStart="34", readValueType="bit"]
@@ -11,11 +11,11 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data PompaTermo [ readStart="37", readValueType="bit"]
         Thing data PompaRil [ readStart="38", readValueType="bit"]
     }
-    Bridge poller coils1 [ start=73, length=1, refresh=5000, type="coil" ] {
+    Bridge poller coils1 [ start=73, length=1, refresh=4000, type="coil" ] {
         // Note the zero based indexing: first coil is index 0.
         Thing data AllarmeGen [ readStart="73", readValueType="bit"]        
     }
-    Bridge poller coils2 [ start=79, length=182, refresh=5000, type="coil" ] {
+    Bridge poller coils2 [ start=79, length=182, refresh=4000, type="coil" ] {
         // Note the zero based indexing: first coil is index 0.
         Thing data TestTht1 [ readStart="79", readValueType="bit"]
         Thing data AllTht1 [ readStart="80", readValueType="bit"]
@@ -109,7 +109,7 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data OffTht13 [ readStart="182", readValueType="bit", writeStart="182", writeValueType="bit", writeType="coil"]                                                       
     }
 
-    Bridge poller holding [ start=16, length=10, refresh=5000, type="holding" ] {
+    Bridge poller holding [ start=16, length=10, refresh=4000, type="holding" ] {
         Thing data Tht1t [ readStart="16", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht1u [ readStart="17", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht2t [ readStart="20", readValueType="int16", readTransform="JS(divide10.js)"  ]
@@ -117,7 +117,7 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data Tht3t [ readStart="24", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht3u [ readStart="25", readValueType="int16", readTransform="JS(divide10.js)"  ]
     }
-    Bridge poller holding1 [ start=28, length=10, refresh=5000, type="holding" ] {      
+    Bridge poller holding1 [ start=28, length=10, refresh=4000, type="holding" ] {      
         Thing data Tht4t [ readStart="28", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht4u [ readStart="29", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht5t [ readStart="32", readValueType="int16", readTransform="JS(divide10.js)" ]
@@ -125,7 +125,7 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data Tht6t [ readStart="36", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht6u [ readStart="37", readValueType="int16", readTransform="JS(divide10.js)" ]
     }
-    Bridge poller holding2 [ start=40, length=10, refresh=5000, type="holding" ] {      
+    Bridge poller holding2 [ start=40, length=10, refresh=4000, type="holding" ] {      
         Thing data Tht7t [ readStart="40", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht7u [ readStart="41", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht8t [ readStart="44", readValueType="int16", readTransform="JS(divide10.js)" ]
@@ -133,7 +133,7 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data Tht9t [ readStart="48", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht9u [ readStart="49", readValueType="int16", readTransform="JS(divide10.js)" ]
     }
-    Bridge poller holding3 [ start=52, length=8, refresh=5000, type="holding" ] {      
+    Bridge poller holding3 [ start=52, length=8, refresh=4000, type="holding" ] {      
         Thing data Tht10t [ readStart="52", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht10u [ readStart="53", readValueType="int16", readTransform="JS(divide10.js)"  ]
         Thing data Tht11t [ readStart="54", readValueType="int16", readTransform="JS(divide10.js)" ]
@@ -143,7 +143,7 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data Tht13t [ readStart="58", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data Tht13u [ readStart="59", readValueType="int16", readTransform="JS(divide10.js)" ]
     }
-    Bridge poller holding10 [ start=101, length=13, refresh=5000, type="holding" ] {
+    Bridge poller holding10 [ start=101, length=13, refresh=4000, type="holding" ] {
         Thing data Tht1s [ readStart="101", readValueType="int16", readTransform="JS(divide10.js)", writeStart="101", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
         Thing data Tht2s [ readStart="102", readValueType="int16", readTransform="JS(divide10.js)", writeStart="102", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
         Thing data Tht3s [ readStart="103", readValueType="int16", readTransform="JS(divide10.js)", writeStart="103", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
@@ -158,13 +158,13 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data Tht12s [ readStart="112", readValueType="int16", readTransform="JS(divide10.js)", writeStart="112", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
         Thing data Tht13s [ readStart="113", readValueType="int16", readTransform="JS(divide10.js)", writeStart="113", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding"]
     }
-    Bridge poller holding20 [start=5005, length=2, refresh=5000, type="holding"] {
+    Bridge poller holding20 [start=5005, length=2, refresh=4000, type="holding"] {
         Thing data Sfz1 [readStart="5005", readValueType="int16", writeStart="5005", writeValueType="int16", writeType="holding"]
     }
-    Bridge poller holding21 [start=5020, length=2, refresh=5000, type="holding"] {
+    Bridge poller holding21 [start=5020, length=2, refresh=4000, type="holding"] {
         Thing data Sfz2 [readStart="5020", readValueType="int16", writeStart="5020", writeValueType="int16", writeType="holding"]
     }
-    Bridge poller holding22 [start=5035, length=2, refresh=5000, type="holding"] {
+    Bridge poller holding22 [start=5035, length=2, refresh=4000, type="holding"] {
         Thing data Sfz3 [readStart="5035", readValueType="int16", writeStart="5035", writeValueType="int16", writeType="holding"]
         // Thing data SFascia1 [readStart="5009", readValueType="int16", writeStart="5009", writeValueType="int16", writeType="holding"]
         // Thing data SFascia2 [readStart="5012", readValueType="int16", writeStart="5012", writeValueType="int16", writeType="holding"]
@@ -173,7 +173,7 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
     }
 }
 Bridge modbus:tcp:localhostTCP1 [ host="192.168.1.150", port=502, id=1 ] {
-    Bridge poller holding11 [ start=1, length=6, refresh=5000, type="holding" ] {
+    Bridge poller holding11 [ start=1, length=6, refresh=4000, type="holding" ] {
         Thing data TAccImp [ readStart="1", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data TContrACS [ readStart="2", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data TMandGEO [ readStart="3", readValueType="int16", readTransform="JS(divide10.js)" ]
@@ -181,7 +181,7 @@ Bridge modbus:tcp:localhostTCP1 [ host="192.168.1.150", port=502, id=1 ] {
         Thing data TUscitaaAquaScambiatoreCI [ readStart="5", readValueType="int16", readTransform="JS(divide10.js)" ]
         Thing data TIngressoAcquaScambiatoreCP [ readStart="6", readValueType="int16", readTransform="JS(divide10.js)" ]
     }
-    Bridge poller holding12 [ start=113, length=6, refresh=5000, type="holding" ] {        
+    Bridge poller holding12 [ start=113, length=6, refresh=4000, type="holding" ] {        
         Thing data SetTinStCC [ readStart="113", readValueType="int16", readTransform="JS(divide10.js)", writeStart="113", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding" ]
         Thing data SetTinStCHP [ readStart="114", readValueType="int16", readTransform="JS(divide10.js)", writeStart="114", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding" ]
         Thing data SetTACStCPDC [ readStart="115", readValueType="int16", readTransform="JS(divide10.js)", writeStart="115", writeValueType="int16", writeTransform="JS(multiply10.js)", writeType="holding" ]
