@@ -1,0 +1,2 @@
+String Cam1_video_URL {channel="ipcamera:DAHUA:8f8e1694:videourl"}
+Image Cam1_image {channel="ipcamera:DAHUA:8f8e1694:image"}

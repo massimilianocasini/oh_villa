@@ -1,0 +1,11 @@
+Disabilita tutti i log:
+log:set WARN smarthome.event
+
+Abilita tutti i log
+log:set INFO smarthome.event
+
+Setta i log del bing ipcamera
+log:set WARN org.openhab.binding.ipcamera
+log:set INFO org.openhab.binding.ipcamera
+log:set DEBUG org.openhab.binding.ipcamera
+log:set TRACE org.openhab.binding.ipcamera

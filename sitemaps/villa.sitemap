@@ -152,5 +152,10 @@ sitemap villa label="Benvenuto a CASA"
 
     Frame label="Stato Pompe" {
 		Group item=gPompe label="Stato pompe" icon=pump 
-	}	
+	}
+    Frame label="TVCC" {
+        Text label="CAM1" icon="camera" {
+            Image url="http://google.com/leaveLinkAsThis" item=Cam1_image refresh=10000
+        }
+    }	
 }
