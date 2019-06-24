@@ -155,7 +155,8 @@ sitemap villa label="Benvenuto a CASA"
 	}
     Frame label="TVCC" {
         Text label="CAM1" icon="camera" {
-            Image url="http://google.com/leaveLinkAsThis" item=Cam1_image refresh=10000
+            Image url="http://google.com/leaveLinkAsThis" item=Cam1_image 
+          //   Video url="http://google.com/leaveLinkAsThis" item=Cam1_video_URL encoding="HLS"
         }
     }	
 }
