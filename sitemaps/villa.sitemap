@@ -158,5 +158,19 @@ sitemap villa label="Benvenuto a CASA"
             Image url="http://google.com/leaveLinkAsThis" item=Cam1_image 
           //   Video url="http://google.com/leaveLinkAsThis" item=Cam1_video_URL encoding="HLS"
         }
+    }
+    Frame label="Opensprinkler" {
+        Text label="Stazioni" icon="lawnmower" {
+            Switch item=Station01
+            Switch item=Station02
+            Switch item=Station03
+            Switch item=Station04
+            Switch item=Station05
+            Switch item=Station06
+            Switch item=Station07
+            Switch item=Station08
+            Switch item=Station09
+            Switch item=Station10
+        }
     }	
 }

@@ -1,0 +1,12 @@
+Group stations
+Switch Station01 (stations) { channel="opensprinkler:station:http:01:stationState" }
+Number:Time Station01RaminingTime { channel="opensprinkler:station:http:01:remainingWaterTime" }
+Switch Station02 (stations) { channel="opensprinkler:station:http:02:stationState" }
+Switch Station03 (stations) { channel="opensprinkler:station:http:03:stationState" }
+Switch Station04 (stations) { channel="opensprinkler:station:http:04:stationState" }
+Switch Station05 (stations) { channel="opensprinkler:station:http:05:stationState" }
+Switch Station06 (stations) { channel="opensprinkler:station:http:06:stationState" }
+Switch Station07 (stations) { channel="opensprinkler:station:http:07:stationState" }
+Switch Station08 (stations) { channel="opensprinkler:station:http:08:stationState" }
+Switch Station09 (stations) { channel="opensprinkler:station:http:09:stationState" }
+Switch Station10 (stations) { channel="opensprinkler:station:http:10:stationState" }
