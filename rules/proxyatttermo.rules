@@ -14,7 +14,8 @@ rule "Attiva/Disattiva termostato 1"
 
 rule "Attiva/Disattiva termostato 1 temp"
     when
-        Item FeedBRele1 changed 
+        Item FeedBRele1 changed or 
+        System started
     then
         if(FeedBRele1.state == 0) {
             ProxyWatingAttTermo1.postUpdate(3)
@@ -40,7 +41,8 @@ rule "Attiva/Disattiva termostato 2"
 
 rule "Attiva/Disattiva termostato 2 temp"
     when
-        Item FeedBRele2 changed 
+        Item FeedBRele2 changed or 
+        System started
     then
         if(FeedBRele2.state == 0) {
             ProxyWatingAttTermo2.postUpdate(3)
@@ -66,7 +68,8 @@ rule "Attiva/Disattiva termostato 3"
 
 rule "Attiva/Disattiva termostato 3 temp"
     when
-        Item FeedBRele3 changed 
+        Item FeedBRele3 changed or 
+        System started
     then
         if(FeedBRele3.state == 0) {
             ProxyWatingAttTermo3.postUpdate(3)
@@ -92,7 +95,8 @@ rule "Attiva/Disattiva termostato 4"
 
 rule "Attiva/Disattiva termostato 4 temp"
     when
-        Item FeedBRele4 changed 
+        Item FeedBRele4 changed or 
+        System started
     then
         if(FeedBRele4.state == 0) {
             ProxyWatingAttTermo4.postUpdate(3)
@@ -118,7 +122,8 @@ rule "Attiva/Disattiva termostato 5"
 
 rule "Attiva/Disattiva termostato 5 temp"
     when
-        Item FeedBRele5 changed 
+        Item FeedBRele5 changed or 
+        System started
     then
         if(FeedBRele5.state == 0) {
             ProxyWatingAttTermo5.postUpdate(3)
@@ -144,7 +149,8 @@ rule "Attiva/Disattiva termostato 6"
 
 rule "Attiva/Disattiva termostato 6 temp"
     when
-        Item FeedBRele6 changed 
+        Item FeedBRele6 changed or 
+        System started
     then
         if(FeedBRele6.state == 0) {
             ProxyWatingAttTermo6.postUpdate(3)
@@ -170,7 +176,8 @@ rule "Attiva/Disattiva termostato 7"
 
 rule "Attiva/Disattiva termostato 7 temp"
     when
-        Item FeedBRele7 changed 
+        Item FeedBRele7 changed or 
+        System started
     then
         if(FeedBRele7.state == 0) {
             ProxyWatingAttTermo7.postUpdate(3)
@@ -196,7 +203,8 @@ rule "Attiva/Disattiva termostato 8"
 
 rule "Attiva/Disattiva termostato 8 temp"
     when
-        Item FeedBRele8 changed 
+        Item FeedBRele8 changed or 
+        System started
     then
         if(FeedBRele8.state == 0) {
             ProxyWatingAttTermo8.postUpdate(3)
@@ -222,7 +230,8 @@ rule "Attiva/Disattiva termostato 9"
 
 rule "Attiva/Disattiva termostato 9 temp"
     when
-        Item FeedBRele9 changed 
+        Item FeedBRele9 changed or 
+        System started
     then
         if(FeedBRele9.state == 0) {
             ProxyWatingAttTermo9.postUpdate(3)
@@ -248,7 +257,8 @@ end
 
 rule "Attiva/Disattiva termostato 10 temp"
     when
-        Item FeedBRele10 changed 
+        Item FeedBRele10 changed or 
+        System started
     then
         if(FeedBRele10.state == 0) {
             ProxyWatingAttTermo10.postUpdate(3)
@@ -274,7 +284,8 @@ end
 
 rule "Attiva/Disattiva termostato 11 temp"
     when
-        Item FeedBRele11 changed 
+        Item FeedBRele11 changed or 
+        System started
     then
         if(FeedBRele11.state == 0) {
             ProxyWatingAttTermo11.postUpdate(3)
@@ -300,7 +311,8 @@ end
 
 rule "Attiva/Disattiva termostato 12 temp"
     when
-        Item FeedBRele12 changed 
+        Item FeedBRele12 changed or 
+        System started
     then
         if(FeedBRele12.state == 0) {
             ProxyWatingAttTermo12.postUpdate(3)
@@ -326,7 +338,8 @@ end
 
 rule "Attiva/Disattiva termostato 13 temp"
     when
-        Item FeedBRele13 changed 
+        Item FeedBRele13 changed or 
+        System started
     then
         if(FeedBRele13.state == 0) {
             ProxyWatingAttTermo13.postUpdate(3)
