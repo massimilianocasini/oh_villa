@@ -1,0 +1,7 @@
+Group gNetwork
+
+Switch opensprinkler "OpenSprinkler [MAP(network.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:opensprinkler:online"}
+Switch plcriscaldamento "PLC Riscaldamento [MAP(network.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:plcriscaldamento:online"}
+Switch dahuatvcc "Dahua TVCC [MAP(network.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:dahuatvcc:online"}
+Switch plcpompadicalore "PLC Pompa di calore [MAP(network.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:plcpompadicalore:online"}
+Switch eap110outdoorwifi "EAP110 Outdoor WIFI [MAP(network.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:eap110outdoorwifi:online"}
