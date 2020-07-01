@@ -155,31 +155,71 @@ sitemap villa label="Benvenuto a CASA"
 	}
     Frame label="TVCC" {
         Text label="CAM1" icon="camera" {
-            Image url="http://google.com/leaveLinkAsThis" item=Cam1_image 
+            Image item=Cam1_image
+           // Image url="http://google.com/leaveLinkAsThis" item=Cam1_image 
           //   Video url="http://google.com/leaveLinkAsThis" item=Cam1_video_URL encoding="HLS"
         }
     }
     Frame label="Opensprinkler" {
         Text label="Stazioni" icon="lawnmower" {
-            Switch item=Station01
-            Switch item=Station02
-            Switch item=Station03
-            Switch item=Station04
-            Switch item=Station05
-            Switch item=Station06
-            Switch item=Station07
-            Switch item=Station08
-            Switch item=Station09
-            Switch item=Station10
+            Switch item=Station01 mappings=[ON="START"] visibility=[Station01 == OFF]
+			Switch item=Station01 mappings=[OFF="STOP"] visibility=[Station01 == ON]
+			Selection item=Station01NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station01 == OFF]
+			Default item=Station01RemainingTime visibility=[Station01 == ON]
+
+			Switch item=Station02 mappings=[ON="START"] visibility=[Station02 == OFF]
+			Switch item=Station02 mappings=[OFF="STOP"] visibility=[Station02 == ON]
+			Selection item=Station02NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station02 == OFF]
+			Default item=Station02RemainingTime visibility=[Station02 == ON]
+
+			Switch item=Station03 mappings=[ON="START"] visibility=[Station03 == OFF]
+			Switch item=Station03 mappings=[OFF="STOP"] visibility=[Station03 == ON]
+			Selection item=Station03NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station03 == OFF]
+			Default item=Station03RemainingTime visibility=[Station03 == ON]
+
+			Switch item=Station04 mappings=[ON="START"] visibility=[Station04 == OFF]
+			Switch item=Station04 mappings=[OFF="STOP"] visibility=[Station04 == ON]
+			Selection item=Station04NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station04 == OFF]
+			Default item=Station04RemainingTime visibility=[Station04 == ON]
+
+			Switch item=Station05 mappings=[ON="START"] visibility=[Station05 == OFF]
+			Switch item=Station05 mappings=[OFF="STOP"] visibility=[Station05 == ON]
+			Selection item=Station05NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station05 == OFF]
+			Default item=Station05RemainingTime visibility=[Station05 == ON]
+
+			Switch item=Station06 mappings=[ON="START"] visibility=[Station06 == OFF]
+			Switch item=Station06 mappings=[OFF="STOP"] visibility=[Station06 == ON]
+			Selection item=Station06NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station06 == OFF]
+			Default item=Station06RemainingTime visibility=[Station06 == ON]
+
+			Switch item=Station07 mappings=[ON="START"] visibility=[Station07 == OFF]
+			Switch item=Station07 mappings=[OFF="STOP"] visibility=[Station07 == ON]
+			Selection item=Station07NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station07 == OFF]
+			Default item=Station07RemainingTime visibility=[Station07 == ON]
+
+			Switch item=Station08 mappings=[ON="START"] visibility=[Station08 == OFF]
+			Switch item=Station08 mappings=[OFF="STOP"] visibility=[Station08 == ON]
+			Selection item=Station08NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station08 == OFF]
+			Default item=Station08RemainingTime visibility=[Station08 == ON]
+
+            Switch item=Station09 mappings=[ON="START"] visibility=[Station09 == OFF]
+			Switch item=Station09 mappings=[OFF="STOP"] visibility=[Station09 == ON]
+			Selection item=Station09NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station09 == OFF]
+			Default item=Station09RemainingTime visibility=[Station09 == ON]
+
+            Switch item=Station10 mappings=[ON="START"] visibility=[Station10 == OFF]
+			Switch item=Station10 mappings=[OFF="STOP"] visibility=[Station10 == ON]
+			Selection item=Station10NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station10 == OFF]
+			Default item=Station10RemainingTime visibility=[Station10 == ON]
         }
     }
     Frame label="Sistema" {
         Text label="Disponibilità device" icon=settings {
-            Text item=opensprinkler valuecolor=[ON="green",OFF="red"]
-            Text item=plcriscaldamento valuecolor=[ON="green",OFF="red"]
-            Text item=dahuatvcc valuecolor=[ON="green",OFF="red"]
-            Text item=plcpompadicalore valuecolor=[ON="green",OFF="red"]
-            Text item=eap110outdoorwifi valuecolor=[ON="green",OFF="red"]
+            Text item=opensprinkler label="Opensprinkler [%s]" valuecolor=[ON="green",OFF="red"]
+            Text item=plcriscaldamento label="PLC Riscaldamento [%s]" valuecolor=[ON="green",OFF="red"]
+            Text item=dahuatvcc label="Dahua TVCC [%s]" valuecolor=[ON="green",OFF="red"]
+            Text item=plcpompadicalore label="PLC Pompa di calore [%s]" valuecolor=[ON="green",OFF="red"]
+            Text item=eap110outdoorwifi label="WIFI Piscina  [%s]" valuecolor=[ON="green",OFF="red"]
         }
     }	
 }

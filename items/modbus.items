@@ -23,7 +23,7 @@ Group gGiolo
 Group gEleonora
 Group gPompe
 Group gTempImp
-Group gSPTempImpianto
+Group gSPTempImpianto 
 
 
 Group:Number:AVG gAvgTemperatura "Temperatura media [%.1f °C]" 

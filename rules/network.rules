@@ -3,8 +3,8 @@ rule "Invia messaggio a BOT per device IP persa"
         Member of gNetwork changed 
     then
     val host = triggeringItem
-    if (host.state==OPEN) {
-        sendTelegram("bot1", host.name+" CONNESSO") 
+    if (host.state==ON) {
+        sendTelegram("bot1", host.name+" CONNESSO")
     }
     else {
         sendTelegram("bot1", host.name+" DISCONNESSO")
