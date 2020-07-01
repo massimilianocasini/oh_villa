@@ -1,2 +1,2 @@
-# openhab_villa24
+# OpenHab
 Integrazione MODBUS TCP
