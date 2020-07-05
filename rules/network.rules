@@ -1,3 +1,4 @@
+val mailActions = getActions("mail","mail:smtp:gmail_service")
 rule "Invia messaggio a BOT per device IP persa"
     when
         Member of gNetwork changed 
@@ -5,8 +6,10 @@ rule "Invia messaggio a BOT per device IP persa"
     val host = triggeringItem
     if (host.state==ON) {
         sendTelegram("bot1", host.name+" CONNESSO")
+        mailActions.sendMail("massimiliano.casini@gmail.com","Villa", host.name+"CONNESSO")
     }
     else {
         sendTelegram("bot1", host.name+" DISCONNESSO")
+        mailActions.sendMail("massimiliano.casini@gmail.com","Villa", host.name+"DISCONNESSO")
     }
 end
