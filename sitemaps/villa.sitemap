@@ -217,11 +217,11 @@ sitemap villa label="Benvenuto a CASA"
     }
     Frame label="Sistema" {
         Text label="Disponibilità device" icon=settings {
-            Text item=opensprinkler label="Opensprinkler [%s]" valuecolor=[ON="green",OFF="red"]
-            Text item=plcriscaldamento label="PLC Riscaldamento [%s]" valuecolor=[ON="green",OFF="red"]
-            Text item=dahuatvcc label="Dahua TVCC [%s]" valuecolor=[ON="green",OFF="red"]
-            Text item=plcpompadicalore label="PLC Pompa di calore [%s]" valuecolor=[ON="green",OFF="red"]
-            Text item=eap110outdoorwifi label="WIFI Piscina  [%s]" valuecolor=[ON="green",OFF="red"]
+            Text item=opensprinkler  valuecolor=[ON="green",OFF="red"] 
+            Text item=plcriscaldamento  valuecolor=[ON="green",OFF="red"]
+            Text item=dahuatvcc  valuecolor=[ON="green",OFF="red"]
+            Text item=plcpompadicalore  valuecolor=[ON="green",OFF="red"]
+            Text item=eap110outdoorwifi  valuecolor=[ON="green",OFF="red"]
         }
     }	
 }

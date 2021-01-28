@@ -1,7 +1,7 @@
 Group gNetwork
 
-Switch opensprinkler  <settings> (gNetwork) {channel="network:servicedevice:opensprinkler:online"}
-Switch plcriscaldamento  <settings> (gNetwork) {channel="network:servicedevice:plcriscaldamento:online"}
-Switch dahuatvcc  <settings> (gNetwork) {channel="network:servicedevice:dahuatvcc:online"}
-Switch plcpompadicalore  <settings> (gNetwork) {channel="network:servicedevice:plcpompadicalore:online"}
-Switch eap110outdoorwifi  <settings> (gNetwork) {channel="network:servicedevice:eap110outdoorwifi:online"}
+Switch opensprinkler "Opensprinkler 192.168.1.153 [MAP(newtork.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:opensprinkler:online"}
+Switch plcriscaldamento "PLC Riscaldamento 192.168.1.160 [MAP(newtork.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:plcriscaldamento:online"}
+Switch dahuatvcc "Dauha TVCC 192.168.1.2 [MAP(newtork.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:dahuatvcc:online"}
+Switch plcpompadicalore "PLC Pompa di calore 192.168.1.150 [MAP(newtork.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:plcpompadicalore:online"}
+Switch eap110outdoorwifi "WIFI Piscina 192.168.1.34 [MAP(newtork.map):%s]" <settings> (gNetwork) {channel="network:servicedevice:eap110outdoorwifi:online"}

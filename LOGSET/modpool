@@ -1,0 +1,1 @@
+./modpoll -t0 -r 110 -c 1 192.168.1.160    --- stato relè ReleTht6
